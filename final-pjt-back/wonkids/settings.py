@@ -63,11 +63,12 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-# 인증, 권한에 관한 코드
+# 인증, 권한에 관한 코드, BasicAuthentication 추가
 REST_FRAMEWORK = {
     # Authentication
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
     ],
     # permission
     'DEFAULT_PERMISSION_CLASSES': [
@@ -89,7 +90,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     # django-allauth==0.56.0 이상 사용할 경우 추가
-    "allauth.account.middleware.AccountMiddleware"
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'wonkids.urls'
