@@ -22,6 +22,7 @@ class ArticleListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = ('pk', 'title', 'category')
+        read_only_fields = ('user',)
 
 
 class ArticleSerializer(serializers.ModelSerializer):
