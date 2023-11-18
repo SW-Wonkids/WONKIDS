@@ -179,3 +179,5 @@ AUTHENTICATION_BACKENDS = (
     # django-allauth 패키지에서 제공하는 인증 백엔드 클래스
     "allauth.account.auth_backends.AuthenticationBackend",
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

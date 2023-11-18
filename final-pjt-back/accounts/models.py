@@ -8,4 +8,4 @@ class User(AbstractUser):
     pokemon = models.CharField(max_length=10, blank=True, null=True)
     fin_prdt_cd = models.TextField(blank=True, null=True)
 
-    # USERNAME_FIELD = 'user_id' 
+    USERNAME_FIELD = 'user_id' 
