@@ -170,6 +170,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# 사용자 수정
 AUTH_USER_MODEL = 'accounts.User'
 
 AUTHENTICATION_BACKENDS = (
@@ -180,4 +181,13 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
+# [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다 해결 위해 작성
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# REST-AUTH 회원가입 기본 Serailizer 재정의
+REST_AUTH = {
+'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
+}
+
+# REST_AUTH 회원가입 기본 Adapter 재정의
+ACCOUNT_ADAPTER = 'accounts.models.CustomAccountAdapter'
