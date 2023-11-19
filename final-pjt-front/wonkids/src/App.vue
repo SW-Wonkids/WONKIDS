@@ -1,16 +1,25 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
+import { useCounterStore } from '@/stores/counter'
+
+const store = useCounterStore()
+
 </script>
 
 <template>
   <header>
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-
-    
     <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
+      <nav v-if="store.isLogin">
+        <RouterLink :to="{name: 'home'}">Home</RouterLink>
+        <!-- <RouterLink :to="{name: 'logout'}">Log Out</RouterLink> -->
+        <RouterLink :to="{name: 'banklist'}">Bank</RouterLink>
+        <RouterLink :to="{name: 'profile'}">Profile</RouterLink>
+        <RouterLink :to="{name: 'article-list'}">Article</RouterLink>
+        <RouterLink :to="{name: 'poll'}">Poll</RouterLink>
+      </nav>
+      <nav v-else>
+        <RouterLink :to="{name: 'home'}">Home</RouterLink>
         <RouterLink :to="{name: 'signup'}">Sign Up</RouterLink>
         <RouterLink :to="{name: 'login'}">Log In</RouterLink>
         <RouterLink :to="{name: 'banklist'}">Bank</RouterLink>

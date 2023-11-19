@@ -8,9 +8,6 @@
 </template> -->
 
 <template>
-  
-  
-  
   <div class="tiledBackground">
     <img src="@/assets/duck.png" alt="duck.png" class="duck">
     <img src="@/assets/container.jpg" alt="container.jpg" class="container">
@@ -76,6 +73,7 @@
     </p>
   </div>
 </template>
+
 <script>
   export default {
     data() {
