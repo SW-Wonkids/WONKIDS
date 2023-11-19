@@ -8,6 +8,7 @@ from .models import Deposit, Savings
 # Create your views here.
 def index(request):
     pass
+    
 
 
 def profile(request):
