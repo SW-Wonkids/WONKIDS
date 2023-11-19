@@ -1,20 +1,14 @@
-<!-- <template>
-  <div class="tiledBackground">
-    <img src="@/assets/duck.png" alt="duck.png" class="duck">
-    <img src="@/assets/container.jpg" alt="container.jpg" class="container">
-
-  </div>
-  
-</template> -->
-
+<!-- bootstrap text code -->
 <template>
-  <div class="tiledBackground">
-    <img src="@/assets/duck.png" alt="duck.png" class="duck">
-    <img src="@/assets/container.jpg" alt="container.jpg" class="container">
-    
-  
-
+  <div>
+    <b-button>Button</b-button>
+    <b-button variant="danger">Button</b-button>
+    <b-button variant="success">Button</b-button>
+    <b-button variant="outline-primary">Button</b-button>
   </div>
+
+  <h1>Home</h1>
+  <!-- carousel만 되지 않고 있음 -->
   <div>
     <b-carousel
       id="carousel-1"
@@ -67,10 +61,10 @@
       </b-carousel-slide>
     </b-carousel>
 
-    <p class="mt-4">
+    <!-- <p class="mt-4">
       Slide #: {{ slide }}<br>
       Sliding: {{ sliding }}
-    </p>
+    </p> -->
   </div>
 </template>
 
@@ -94,20 +88,4 @@
 </script>
 
 <style scoped>
-
-.tiledBackground {
-  background-image: url(@/assets/yellow.jpg);
-  background-size: 150px;
-  width: 100%;
-  height: 90vh;
-  border: 2px solid;
-  color: pink;
-
-}
-
-.duck {
-  width: 100px;
-  height: 100px;
-}
-
 </style>
