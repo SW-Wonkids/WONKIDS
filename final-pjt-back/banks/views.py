@@ -8,6 +8,7 @@ import requests
 from .serializers import DepositSerializer
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse
+from rest_framework import status 
 
 # Create your views here.
 def index(request):
@@ -78,9 +79,21 @@ def bank_list(request):
             serializer = DepositSerializer(data=save_deposit_data)
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
-                
-    return JsonResponse({'message':'true'})
+
+    # return JsonResponse({'message':'true'})
     
+    if request.method == 'GET':
+        deposit_products = Deposit.objects.all()
+        serializer = DepositSerializer(deposit_products, many=True)
+        return Response(serializer.data)
+    
+    # if request.method=='POST':
+    #     requestData = request.data
+    #     serializer = DepositProductsSerializer(data=requestData)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 def bank_detail(request):
