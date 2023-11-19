@@ -7,7 +7,14 @@ class DepositSerializer(serializers.ModelSerializer):
     class Meta:
         model = Deposit
         fields='__all__'
-        # fields = ('fin_prdt_cd', 'fin_prdt_nm', 'dcls_month', 'join_deny', 'join_way', 'spcl_cnd')
+
+
+# 적금 데이터 받을 serializer 
+class SavingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Savings
+        fields='__all__'
+        
 
 
 # class DepositOptionsSerializer(serializers.ModelSerializer):

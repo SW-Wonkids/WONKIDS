@@ -34,3 +34,5 @@ class Savings(models.Model):
     join_deny = models.TextField(null=True)
     join_way = models.TextField(null=True)
     spcl_cnd = models.TextField(null=True)
+    # 동일 fin_prdt_cd 에 rsrv_type 이 S/F 로 나누어짐 
+    rsrv_type = models.TextField()
