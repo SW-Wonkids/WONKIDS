@@ -6,13 +6,11 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from .serializers import ArticleListSerializer, CategorySerializer, ArticleSerializer, CommentSerializer
 from .models import Category, Article, Comment
 
-# authentication_class 데코레이터 사용
-from rest_framework.decorators import authentication_classes
-from rest_framework.authentication import TokenAuthentication, BasicAuthentication
-
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticated
 
 @api_view(['GET', 'POST'])
-@authentication_classes([TokenAuthentication, BasicAuthentication])
+@permission_classes([IsAuthenticated])
 def article_list(request):
     if request.method == 'GET':
         articles = get_list_or_404(Article)

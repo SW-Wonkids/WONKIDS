@@ -71,7 +71,6 @@ REST_FRAMEWORK = {
     # Authentication
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
     ],
     # permission
     'DEFAULT_PERMISSION_CLASSES': [
@@ -194,3 +193,18 @@ REST_AUTH = {
 
 # REST_AUTH 회원가입 기본 Adapter 재정의
 ACCOUNT_ADAPTER = 'accounts.models.CustomAccountAdapter'
+
+## API_KEY 사용을 위한 코드 추가
+### .env ###
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+import os 
+import environ 
+
+env = environ.Env(DEBUG=(bool, True))
+
+environ.Env.read_env(
+  env_file=os.path.join(BASE_DIR, '.env')
+)
+
+API_KEY = env('API_KEY')

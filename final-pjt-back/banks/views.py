@@ -1,7 +1,5 @@
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from django.shortcuts import render
 # from .serializers import PostListSerializer, CategorySerializer, PostSerializer, CommentSerializer
 from .models import Deposit, Savings
 
@@ -15,7 +13,7 @@ def profile(request):
 
 
 def bank_list(request):
-    pass
+    API_KEY = settings.API_KEY
 
 
 def bank_detail(request):
