@@ -9,6 +9,7 @@ import BankView from '@/views/BankView.vue'
 import ExchangeRateView from '@/views/ExchangeRateView.vue'
 import HomeView from '@/views/HomeView.vue'
 import LogInView from '@/views/LogInView.vue'
+import LogOutView from '@/views/LogOutView.vue'
 import PollView from '@/views/PollView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import SignUpView from '@/views/SignUpView.vue'
@@ -30,6 +31,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LogInView
+    },
+    {
+      path: '/logout',
+      name: 'logout',
+      component: LogOutView
     },
     {
       path: '/banklist',

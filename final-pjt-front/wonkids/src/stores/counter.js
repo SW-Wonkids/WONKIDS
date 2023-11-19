@@ -58,19 +58,19 @@ export const useCounterStore = defineStore('counter', () => {
           })
       }
     
-    //   const logOut = function () {
-    //     axios({
-    //       method: 'post',
-    //       url: `${API_URL}/accounts/logout/`,
-    //     })
-    //       .then((res) => {
-    //         token.value = null
-    //         router.push({ name: 'ArticleView' })
-    //       })
-    //       .catch((err) => {
-    //         console.log(err)
-    //       })
-    //   }    
+      const logOut = function () {
+        axios({
+          method: 'post',
+          url: `${API_URL}/accounts/logout/`,
+        })
+          .then((res) => {
+            token.value = null
+            router.push({ name: 'home' })
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      }    
 
-    return { API_URL, token, isLogin, signUp, logIn }
+    return { API_URL, token, isLogin, signUp, logIn, logOut }
 }, { persist: true })

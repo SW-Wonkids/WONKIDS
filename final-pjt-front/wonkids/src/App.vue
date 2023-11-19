@@ -12,9 +12,9 @@ const store = useCounterStore()
     <div class="wrapper">
       <nav v-if="store.isLogin">
         <RouterLink :to="{name: 'home'}">Home</RouterLink>
-        <!-- <RouterLink :to="{name: 'logout'}">Log Out</RouterLink> -->
-        <RouterLink :to="{name: 'banklist'}">Bank</RouterLink>
+        <RouterLink :to="{name: 'logout'}">Log Out</RouterLink>
         <RouterLink :to="{name: 'profile'}">Profile</RouterLink>
+        <RouterLink :to="{name: 'banklist'}">Bank</RouterLink>
         <RouterLink :to="{name: 'article-list'}">Article</RouterLink>
         <RouterLink :to="{name: 'poll'}">Poll</RouterLink>
       </nav>
@@ -23,7 +23,6 @@ const store = useCounterStore()
         <RouterLink :to="{name: 'signup'}">Sign Up</RouterLink>
         <RouterLink :to="{name: 'login'}">Log In</RouterLink>
         <RouterLink :to="{name: 'banklist'}">Bank</RouterLink>
-        <RouterLink :to="{name: 'profile'}">Profile</RouterLink>
         <RouterLink :to="{name: 'article-list'}">Article</RouterLink>
         <RouterLink :to="{name: 'poll'}">Poll</RouterLink>
       </nav>
