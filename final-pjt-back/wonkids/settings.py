@@ -181,3 +181,18 @@ AUTHENTICATION_BACKENDS = (
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+## API_KEY 사용을 위한 코드 추가
+### .env ###
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+import os 
+import environ 
+
+env = environ.Env(DEBUG=(bool, True))
+
+environ.Env.read_env(
+  env_file=os.path.join(BASE_DIR, '.env')
+)
+
+API_KEY = env('API_KEY')
