@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+
 //bootstrap 추가
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'

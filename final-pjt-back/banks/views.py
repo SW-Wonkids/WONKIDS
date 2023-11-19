@@ -17,7 +17,8 @@ def profile(request):
 
 
 def bank_list(request):
-    API_KEY = settings.API_KEY
+    # API_KEY = settings.API_KEY
+    pass
 
 
 def bank_detail(request):
