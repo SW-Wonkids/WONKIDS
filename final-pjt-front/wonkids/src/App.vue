@@ -7,6 +7,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <header>
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
+    
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -33,8 +34,9 @@ nav {
   display: flex;
   justify-content: center;
   /* background-color: #333; */
-  background-color: pink;
+  background-color: rgb(255, 204, 0);
   padding: 1rem 0;
+  
 }
 
 nav a {
