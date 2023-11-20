@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Deposit, Savings
 from django.contrib.auth import get_user_model
-
 # 정기예금
 class DepositSerializer(serializers.ModelSerializer):
     class Meta:
