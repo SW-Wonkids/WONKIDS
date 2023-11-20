@@ -33,4 +33,4 @@ def bank_map(request):
 
 
 def exchange_rate(request):
-    pass 
+    pass
