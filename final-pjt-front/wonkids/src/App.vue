@@ -1,8 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { useCounterStore } from '@/stores/counter'
+import { useAuthStore } from '@/stores/auth'
 
-const store = useCounterStore()
+const store = useAuthStore()
 
 </script>
 

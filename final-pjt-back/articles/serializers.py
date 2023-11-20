@@ -20,7 +20,7 @@ class ArticleListSerializer(serializers.ModelSerializer):
     pokemon = CategorySerializer(read_only=True)
     class Meta:
         model = Article
-        fields = ('pk', 'title', 'pokemon',)
+        fields = ('pk', 'title', 'category',)
         read_only_fields = ('user', )
 
 

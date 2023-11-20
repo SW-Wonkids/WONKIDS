@@ -3,12 +3,12 @@ from django.conf import settings
 
 # Create your models here.
 class Category(models.Model):
-    pokemon = models.CharField(max_length=10)
+    name = models.CharField(max_length=10)
 
 
 class Article(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    pokemon = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     title = models.CharField(max_length=50)
     content = models.CharField(max_length=250)

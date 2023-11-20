@@ -28,7 +28,7 @@ def article_list(request):
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        pokemon = get_object_or_404(Category, pk=request.data.get('pokemon'))
+        pokemon = get_object_or_404(Category, pk=request.data.get('category'))
         serializer = ArticleSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save(pokemon=pokemon, user=request.user)

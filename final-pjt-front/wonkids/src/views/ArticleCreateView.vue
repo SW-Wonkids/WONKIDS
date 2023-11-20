@@ -26,6 +26,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useCategoryStore } from '@/stores/categories'
 import { useArticleStore } from '@/stores/articles'
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
@@ -35,7 +36,12 @@ const router = useRouter()
 const title = ref('')
 const content = ref('')
 const category = ref(1)
+
 const articleStore = useArticleStore()
+const categoryStore = useCategoryStore()
+onMounted(() => {
+  categoryStore.getCategoryList()
+})
 
 const createArticle = function () {
   const article = {
