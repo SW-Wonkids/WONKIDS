@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ArticleCreateView from '@/views/ArticleCreateView.vue'
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleView from '@/views/ArticleView.vue'
-import BankListDepositView from '@/views/BankListDepositView.vue'
 import BankMapView from '@/views/BankMapView.vue'
 import BankView from '@/views/BankView.vue'
 import ExchangeRateView from '@/views/ExchangeRateView.vue'
@@ -14,8 +13,11 @@ import PollView from '@/views/PollView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import SignUpView from '@/views/SignUpView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
-import BankTotalView from '@/views/BankTotalView.vue'
+// 정기예금 , 적금 데이터 출력 관련 페이지 
+import BankTotalView from '@/views/BankTotalView.vue' 
+import BankListDepositView from '@/views/BankListDepositView.vue'
 import BankListSavingsView from '@/views/BankListSavingsView.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

@@ -15,15 +15,3 @@ class SavingsSerializer(serializers.ModelSerializer):
         fields='__all__' 
 
 
-#  정기예금 상세정보
-# class DepositDetailSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = DetailDeposit
-#         fields='__all__'
-  
-
-# 적금 상세정보
-# class SavingsSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = DetailSavings
-#         fields='__all__' 

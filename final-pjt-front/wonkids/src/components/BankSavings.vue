@@ -1,4 +1,5 @@
 <template>
+  <!--BankListSavings > BankSavings 적금 vue page -->
   <div>
     <h5>{{ bank.id }}.</h5>
     <p>공시 제출월[YYYYMM] : {{ bank.dcls_month }}</p>

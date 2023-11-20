@@ -1,4 +1,5 @@
 <template>
+  <!--BankListDeposit > BankDeposit 정기예금 vue page -->
   <div>
     <h2>정기예금 상품 List 출력</h2>
     <BankDeposit

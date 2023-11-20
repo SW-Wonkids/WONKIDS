@@ -1,4 +1,6 @@
 <template>
+  <!--BankListDepositView > BankListDeposit > BankDeposit 정기예금 vue page 
+    + BankListSavingsView > BankListSavings > BankSavings 적금 vue page -->
   <div>
     <p>정기예금 & 적금 금융상품을 여기서 확인해보세요!</p>
     <RouterLink :to="{name: 'banklist_deposit'}">정기예금(DEPOSIT)</RouterLink>   | 

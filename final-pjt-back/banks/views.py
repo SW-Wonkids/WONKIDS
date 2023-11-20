@@ -21,11 +21,9 @@ def profile(request):
 
 
 
-
+ # 정기예금 데이터 가져오는 함수
 @api_view(['GET', 'POST'])
 def bank_list_deposit(request):
-
-    # 정기예금 데이터 가져오기
     API_KEY = settings.API_KEY
     deposit_url = f'http://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json?auth={API_KEY}&topFinGrpNo=020000&pageNo=1'
     deposit_data = requests.get(deposit_url).json()
@@ -86,11 +84,11 @@ def bank_list_deposit(request):
         serializer = DepositSerializer(deposit_products, many=True)
     return Response(serializer.data)
     
-        
+
+# 적금 데이터 가져오는 함수     
 @api_view(['GET', 'POST'])
 def bank_list_savings(request):
     API_KEY = settings.API_KEY
-    # 적금 데이터 가져오기
     savings_url = f'http://finlife.fss.or.kr/finlifeapi/savingProductsSearch.json?auth={API_KEY}&topFinGrpNo=020000&pageNo=1'
     savings_data = requests.get(savings_url).json()
 

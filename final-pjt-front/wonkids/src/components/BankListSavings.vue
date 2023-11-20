@@ -1,4 +1,5 @@
 <template>
+  <!--BankListSavings > BankSavings 적금 vue page -->
   <div>
     <h2>적금 상품 List 출력</h2>
     <BankSavings
