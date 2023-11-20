@@ -10,6 +10,14 @@ from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAuthenticated
 
 
+@api_view(['GET'])
+def category(request):
+    if request.method == 'GET':
+        categories = get_list_or_404(Category)
+        serializer = CategorySerializer(categories, many=True)
+        return Response(serializer.data)
+
+
 @api_view(['GET', 'POST'])
 # @permission_classes([IsAuthenticated])
 def article_list(request):
