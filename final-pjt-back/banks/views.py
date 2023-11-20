@@ -34,7 +34,7 @@ def bank_list_deposit(request):
         # 이미 저장된 상품이 아닌 경우에 대해 
         fin_prdt_cd = deposit_product.get('fin_prdt_cd')
         if not Deposit.objects.filter(fin_prdt_cd=fin_prdt_cd).exists():
-            
+             
             # optionList 항목 중 동일 fin_prdt_cd 인 경우
             for deposit_option in deposit_data.get('result').get('optionList'):
                 if deposit_option.get('fin_prdt_cd') == fin_prdt_cd:
@@ -64,6 +64,7 @@ def bank_list_deposit(request):
                 'join_deny': deposit_product.get('join_deny'),
                 'join_way': deposit_product.get('join_way'),
                 'spcl_cnd': deposit_product.get('spcl_cnd'),
+                'kor_co_nm':  deposit_product.get('kor_co_nm'),
                 'save_trm_6':save_trm_6,
                 'intr_rate_6': intr_rate_6,
                 'save_trm_12':save_trm_12,
@@ -132,7 +133,7 @@ def bank_list_savings(request):
                 'join_deny': savings_product.get('join_deny'),
                 'join_way': savings_product.get('join_way'),
                 'spcl_cnd': savings_product.get('spcl_cnd'),
-            
+                'kor_co_nm':savings_product.get('kor_co_nm'),
                 'save_trm_6':save_trm_6,
                 'intr_rate_6': intr_rate_6,
                 'save_trm_12':save_trm_12,
