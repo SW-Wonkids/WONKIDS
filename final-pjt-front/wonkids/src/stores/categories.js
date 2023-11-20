@@ -7,7 +7,7 @@ export const useCategoryStore = defineStore('category', () => {
     const getCategoryList = function () {
         axios({
         method: 'get',
-        url: 'http://127.0.0.1:8000/api/v1/category/',
+        url: 'http://127.0.0.1:8000/api/v1/articles/category/',
     })
     .then(res => categoryList.value = res.data)
     .catch(err => console.log(err))
