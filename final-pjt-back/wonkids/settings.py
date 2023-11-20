@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'banks',
     'polls',
 
-    # 테스트 더미테이터 생성 위해 등록
-    'django_seed',
+    # # 테스트 더미테이터 생성 위해 등록
+    # 'django_seed',
 
     # rest_framework 등록
     'rest_framework',
