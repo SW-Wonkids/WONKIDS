@@ -207,4 +207,4 @@ environ.Env.read_env(
   env_file=os.path.join(BASE_DIR, '.env')
 )
 
-# API_KEY = env('API_KEY')
+API_KEY = env('API_KEY')
