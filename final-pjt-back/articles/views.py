@@ -22,16 +22,17 @@ def category(request):
 # @permission_classes([IsAuthenticated])
 def article_list(request):
     if request.method == 'GET':
-        print('test')
         articles = get_list_or_404(Article)
         serializer = ArticleListSerializer(articles, many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
-        pokemon = get_object_or_404(Category, pk=request.data.get('category'))
+        category = get_object_or_404(Category, pk=request.data.get('category'))
         serializer = ArticleSerializer(data=request.data)
+        print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+        print(request.user)
         if serializer.is_valid(raise_exception=True):
-            serializer.save(pokemon=pokemon, user=request.user)
+            serializer.save(category=category, user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 

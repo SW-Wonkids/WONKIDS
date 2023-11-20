@@ -6,7 +6,7 @@ from allauth.account.adapter import DefaultAccountAdapter
 class User(AbstractUser):
     username = models.CharField(max_length=15, unique=True)
     email = models.EmailField(max_length=254)
-    pokemon = models.CharField(max_length=10, blank=True, null=True)
+    category = models.CharField(max_length=10, blank=True, null=True)
     fin_prdt_cd = models.TextField(blank=True, null=True)
 
     is_active = models.BooleanField(default=True)
@@ -27,8 +27,9 @@ class CustomAccountAdapter(DefaultAccountAdapter):
         data = form.cleaned_data
         first_name = data.get("first_name")
         last_name = data.get("last_name")
-        email = data.get("email")
         username = data.get("username")
+        email = data.get("email")
+        category = data.get("category")
         financial_product = data.get("financial_products")
 
         user_email(user, email)
@@ -37,6 +38,9 @@ class CustomAccountAdapter(DefaultAccountAdapter):
             user_field(user, "first_name", first_name)
         if last_name:
             user_field(user, "last_name", last_name)
+
+        if category:
+            user_field(user, "category", category)
 
         if financial_product:
             financial_products = user.financial_products.split(',')
