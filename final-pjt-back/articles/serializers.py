@@ -17,17 +17,16 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class ArticleListSerializer(serializers.ModelSerializer):
-    category = CategorySerializer(read_only=True)
-
+    pokemon = CategorySerializer(read_only=True)
     class Meta:
         model = Article
-        fields = ('pk', 'title', 'category')
-        read_only_fields = ('user',)
+        fields = ('pk', 'title', 'category',)
+        read_only_fields = ('user', )
 
 
 class ArticleSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
-    category = CategorySerializer(read_only=True)
+    pokemon = CategorySerializer(read_only=True)
     
     class CommentSerialzer(serializers.ModelSerializer):
         class Meta:
@@ -43,10 +42,9 @@ class ArticleSerializer(serializers.ModelSerializer):
 
         
 class CommentSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
-    post = ArticleListSerializer(read_only=True)
+    article = ArticleListSerializer(read_only=True)
 
     class Meta:
         model = Comment
         fields = '__all__'
-        read_only_fields = ('user', )
+        read_only_fields = ('user',)
