@@ -21,9 +21,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useCounterStore } from '@/stores/counter'
-
-const store = useCounterStore()
+import { useAuthStore } from '@/stores/auth'
+  
+const store = useAuthStore()
 const username = ref(null)
 const password1 = ref(null)
 const password2 = ref(null)

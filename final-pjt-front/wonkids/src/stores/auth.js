@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 
-export const useCounterStore = defineStore('counter', () => {
+export const useAuthStore = defineStore('counter', () => {
     const router = useRouter()
     const API_URL = 'http://127.0.0.1:8000'
     const token = ref(null)

@@ -6,16 +6,16 @@
             <input type="submit" value="logOut">
         </form>
     </div>
-  </template>
+</template>
   
-  <script setup>
-  import { useCounterStore } from '@/stores/counter'
+<script setup>
+import { useAuthStore } from '@/stores/auth'
   
-  const store = useCounterStore()
+const store = useAuthStore()
 
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   
-  </style>
+</style>
   
