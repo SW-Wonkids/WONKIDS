@@ -2,22 +2,29 @@ from rest_framework import serializers
 from .models import Deposit, Savings
 from django.contrib.auth import get_user_model
 
-## product, option에 해당하는 serializer를 field로 나누어 설정 
+# 정기예금
 class DepositSerializer(serializers.ModelSerializer):
     class Meta:
         model = Deposit
         fields='__all__'
 
 
-# 적금 데이터 받을 serializer 
+# 적금
 class SavingsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Savings
-        fields='__all__'
-        
+        fields='__all__' 
 
 
-# class DepositOptionsSerializer(serializers.ModelSerializer):
+#  정기예금 상세정보
+# class DepositDetailSerializer(serializers.ModelSerializer):
 #     class Meta:
-#         model = Deposit
-#         fields = ('save_trm_6', 'save_trm_12', 'save_trm_24', 'save_trm_36', 'intr_rate_6', 'intr_rate_12', 'intr_rate_24','intr_rate_36')
+#         model = DetailDeposit
+#         fields='__all__'
+  
+
+# 적금 상세정보
+# class SavingsSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = DetailSavings
+#         fields='__all__' 
