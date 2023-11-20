@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ArticleCreateView from '@/views/ArticleCreateView.vue'
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleView from '@/views/ArticleView.vue'
-import BankListView from '@/views/BankListView.vue'
+import BankListDepositView from '@/views/BankListDepositView.vue'
 import BankMapView from '@/views/BankMapView.vue'
 import BankView from '@/views/BankView.vue'
 import ExchangeRateView from '@/views/ExchangeRateView.vue'
@@ -14,7 +14,8 @@ import PollView from '@/views/PollView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import SignUpView from '@/views/SignUpView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
-
+import BankTotalView from '@/views/BankTotalView.vue'
+import BankListSavingsView from '@/views/BankListSavingsView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -39,9 +40,9 @@ const router = createRouter({
       component: LogOutView
     },
     {
-      path: '/banklist',
-      name: 'banklist',
-      component: BankListView
+      path: '/banklist_deposit',
+      name: 'banklist_deposit',
+      component: BankListDepositView
     },
     {
       path: '/bank',
@@ -91,6 +92,16 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       redirect: '/notfound'
+    },
+    {
+      path: '/banktotal',
+      name: 'banktotal',
+      component: BankTotalView
+    },
+    {
+      path: '/banklist_savings',
+      name: 'banklist_savings',
+      component: BankListSavingsView
     },
   ]
 })

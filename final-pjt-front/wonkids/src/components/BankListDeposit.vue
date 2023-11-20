@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>정기예금 상품 List 출력</h2>
-    <Bank 
+    <BankDeposit
       v-for="bank in store.banks"
       :key="bank.id"
       :bank="bank"/>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import Bank from '@/components/Bank.vue'
+import BankDeposit from '@/components/BankDeposit.vue'
 import { useBankStore } from '@/stores/banks'
 
 const store = useBankStore()
