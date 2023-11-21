@@ -10,7 +10,7 @@
       <p>가입제한 : {{ bank.join_deny }}</p>
       <p>가입 방법 : {{ bank.join_way }}</p>
       <p>우대조건 : {{ bank.spcl_cnd }}</p>
-      <RouterLink :to="{name: 'BankListSavings'}">
+      <RouterLink :to="{name: 'banklist_savings'}">
       [BACK]
       </RouterLink>
     </div>
