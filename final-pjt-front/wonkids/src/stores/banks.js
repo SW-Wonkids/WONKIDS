@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
- 
+  
 export const useBankStore = defineStore('bank', () => {
   const banks = ref([])
   const API_URL = 'http://127.0.0.1:8000'

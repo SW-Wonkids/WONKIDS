@@ -9,7 +9,7 @@
 
   </div>
 </template>
-
+ 
 <script setup>
 import { onMounted } from 'vue'
 import { useBankStore } from '@/stores/banks'

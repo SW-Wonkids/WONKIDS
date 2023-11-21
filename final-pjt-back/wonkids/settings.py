@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # 토큰 인증 시스템을 위해 등록
     'rest_framework.authtoken',
+    'corsheaders',
 
     # Dj-Rest_Auth 라이브러리 사용 위해 등록
     'dj_rest_auth',
@@ -98,7 +99,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'wonkids.urls'
 
 CORS_ALLOWED_ORIGINS = [
-   "http://localhost:5173"
+   "http://localhost:5174",
+   'http://127.0.0.1:5174',
 ]
 
 TEMPLATES = [
