@@ -17,7 +17,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class ArticleListSerializer(serializers.ModelSerializer):
-    pokemon = CategorySerializer(read_only=True)
+    category = CategorySerializer(read_only=True)
     class Meta:
         model = Article
         fields = ('pk', 'title', 'category',)
@@ -26,7 +26,7 @@ class ArticleListSerializer(serializers.ModelSerializer):
 
 class ArticleSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
-    pokemon = CategorySerializer(read_only=True)
+    category = CategorySerializer(read_only=True)
     
     class CommentSerialzer(serializers.ModelSerializer):
         class Meta:
