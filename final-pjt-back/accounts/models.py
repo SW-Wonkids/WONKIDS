@@ -5,15 +5,17 @@ from allauth.account.adapter import DefaultAccountAdapter
 # Create your models here.
 class User(AbstractUser):
     username = models.CharField(max_length=15, unique=True)
-    email = models.EmailField(max_length=254)
-    category = models.CharField(max_length=10, blank=True, null=True)
-    fin_prdt_cd = models.TextField(blank=True, null=True)
+    email = models.EmailField(max_length=254, blank=True, null=True)
+    category = models.IntegerField(blank=True, null=True)
 
+    # 리스트 데이터 저장을 위해 text 형태로 저장
+    financial_products = models.TextField(blank=True, null=True)
+
+    # superuser fields
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-
-    USERNAME_FIELD = 'username' 
+    USERNAME_FIELD = 'username'
 
 
 class CustomAccountAdapter(DefaultAccountAdapter):
@@ -27,8 +29,8 @@ class CustomAccountAdapter(DefaultAccountAdapter):
         data = form.cleaned_data
         first_name = data.get("first_name")
         last_name = data.get("last_name")
-        username = data.get("username")
         email = data.get("email")
+        username = data.get("username")
         category = data.get("category")
         financial_product = data.get("financial_products")
 
@@ -38,23 +40,22 @@ class CustomAccountAdapter(DefaultAccountAdapter):
             user_field(user, "first_name", first_name)
         if last_name:
             user_field(user, "last_name", last_name)
-
         if category:
-            user_field(user, "category", category)
-
+            user.category = category
         if financial_product:
             financial_products = user.financial_products.split(',')
             financial_products.append(financial_product)
-
+            
             if len(financial_products) > 1:
                 financial_products = ','.join(financial_products)
             user_field(user, "financial_products", financial_products)
-        
+
         if "password1" in data:
             user.set_password(data["password1"])
         else:
             user.set_unusable_password()
         self.populate_username(request, user)
+        
         if commit:
         # Ability not to commit makes it easier to derive from
         # this adapter by adding

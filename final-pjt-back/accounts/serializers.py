@@ -7,19 +7,18 @@ from dj_rest_auth.registration.serializers import RegisterSerializer
 
 
 class CustomRegisterSerializer(RegisterSerializer):
-# 추가할 필드들을 정의합니다.
+    # 추가할 필드들을 정의합니다.
+    category = serializers.IntegerField(required=False)
     financial_products = serializers.ListField(child=serializers.IntegerField(), required=False)
-
-    # ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x00000281818CF850>": "Article.user" must be a "User" instance. 해결 위해 설정
+    
     def get_cleaned_data(self):
         return {
             'username': self.validated_data.get('username', ''),
-            'email': self.validated_data.get('email', ''),
             'password1': self.validated_data.get('password1', ''),
             'category': self.validated_data.get('category', ''),
             'financial_products': self.validated_data.get('financial_products', ''),
         }
-
+    
     def save(self, request):
         adapter = get_adapter()
         user = adapter.new_user(request)

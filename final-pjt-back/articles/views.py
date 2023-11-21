@@ -11,6 +11,7 @@ from rest_framework.permissions import IsAuthenticated
 
 
 @api_view(['GET'])
+# @permission_classes([IsAuthenticated])
 def category(request):
     if request.method == 'GET':
         categories = get_list_or_404(Category)
@@ -19,7 +20,7 @@ def category(request):
 
 
 @api_view(['GET', 'POST'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def article_list(request):
     if request.method == 'GET':
         articles = get_list_or_404(Article)
@@ -29,8 +30,6 @@ def article_list(request):
     elif request.method == 'POST':
         category = get_object_or_404(Category, pk=request.data.get('category'))
         serializer = ArticleSerializer(data=request.data)
-        print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
-        print(request.user)
         if serializer.is_valid(raise_exception=True):
             serializer.save(category=category, user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)

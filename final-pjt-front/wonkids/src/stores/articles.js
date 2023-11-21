@@ -1,15 +1,23 @@
 import axios from 'axios'
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { useAuthStore } from '@/stores/auth'
+
 
 export const useArticleStore = defineStore('article', () => {
+    const store = useAuthStore()
+    const token = ref(store.token)
+    
     const articleList = ref([])
 
     // article 전체 조회
     const getArticleList = function () {
         axios({
         method: 'get',
-        url: 'http://127.0.0.1:8000/api/v1/articles/'
+        url: 'http://127.0.0.1:8000/api/v1/articles/',
+        headers: {
+            Authorization: `Token ${token.value}`
+        }
         })
         .then(res => articleList.value = res.data)
         .catch(err => console.log(err))
@@ -21,7 +29,10 @@ export const useArticleStore = defineStore('article', () => {
     const getArticleDetail = function (pk) {
         axios({
         method: 'get',
-        url: `http://127.0.0.1:8000/api/v1/articles/${pk}`
+        url: `http://127.0.0.1:8000/api/v1/articles/${pk}`,
+        headers: {
+            Authorization: `Token ${token.value}`
+        }
         })
         .then(res => articleDetail.value = res.data)
         .catch(err => console.log(err))
@@ -36,6 +47,9 @@ export const useArticleStore = defineStore('article', () => {
             category,
             title,
             content
+        },
+        headers: {
+            Authorization: `Token ${token.value}`
         }
     })
     }
@@ -49,7 +63,10 @@ export const useArticleStore = defineStore('article', () => {
         category,
         title,
         content,
-    }
+        },
+        headers: {
+            Authorization: `Token ${token.value}`
+        }
     })
     .then((res) => {
         getArticleDetail(pk)
@@ -60,7 +77,10 @@ export const useArticleStore = defineStore('article', () => {
         axios({
             method: 'delete',
             url: `http://127.0.0.1:8000/api/v1/articles/${pk}/`,
-            data: { pk }
+            data: { pk },
+            headers: {
+                Authorization: `Token ${token.value}`
+            }
         })
         .then(res => {
             getArticleList()
