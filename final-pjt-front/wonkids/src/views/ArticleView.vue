@@ -17,7 +17,7 @@
     <button @click="deleteArticle">삭제</button>
     <hr>
     <CommentCreate 
-      :postPk="store.articleDetail.id"
+      :articlePk="store.articleDetail.id"
     />
     <ul class="comment-list">
       <CommentList
@@ -50,7 +50,7 @@ const updateArticle = function () {
 }
 
 const deleteArticle = function () {
-  const pk = store.articleDetail.pk
+  const pk = store.articleDetail.id
   store.deleteArticle(pk)
   router.push({ name: 'article-list' })
 }

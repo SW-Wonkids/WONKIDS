@@ -71,7 +71,7 @@ def comment_create(request, article_pk):
 
 @api_view(['GET', 'DELETE'])
 @permission_classes([IsAuthenticated])
-def comment_detail(request, article_pk, comment_pk):
+def comment_detail(request, comment_pk):
     comment = get_object_or_404(Comment, pk=comment_pk)
 
     if request.method == 'GET':
