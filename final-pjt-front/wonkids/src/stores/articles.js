@@ -5,8 +5,8 @@ import { useAuthStore } from '@/stores/auth'
 
 // merge test
 export const useArticleStore = defineStore('article', () => {
-    const store = useAuthStore()
-    const token = ref(store.token)
+    const authStore = useAuthStore()
+    const token = ref(authStore.token)
     
     const articleList = ref([])
 
@@ -78,7 +78,9 @@ export const useArticleStore = defineStore('article', () => {
         axios({
             method: 'delete',
             url: `http://127.0.0.1:8000/api/v1/articles/${pk}/`,
-            data: { pk },
+            data: {
+                pk
+            },
             headers: {
                 Authorization: `Token ${token.value}`
             }

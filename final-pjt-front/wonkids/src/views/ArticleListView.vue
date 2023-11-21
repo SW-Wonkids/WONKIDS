@@ -31,7 +31,7 @@ onMounted(() => {
 })
 
 const goDetail = (pk) => {
-  router.push({name:'article', params:{pk: pk}})
+  router.push({name:'article', params:{pk: pk} })
 }
 
 </script>

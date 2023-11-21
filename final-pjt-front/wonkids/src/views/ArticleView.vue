@@ -50,7 +50,7 @@ const updateArticle = function () {
 }
 
 const deleteArticle = function () {
-  const pk = store.detailPost.id
+  const pk = store.articleDetail.pk
   store.deleteArticle(pk)
   router.push({ name: 'article-list' })
 }

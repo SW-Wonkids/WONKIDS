@@ -77,7 +77,7 @@ const router = createRouter({
       component: ArticleListView
     },
     {
-      path: '/article',
+      path: '/article/:pk',
       name: 'article',
       component: ArticleView
     },
