@@ -4,7 +4,6 @@ import ArticleCreateView from '@/views/ArticleCreateView.vue'
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleView from '@/views/ArticleView.vue'
 import BankMapView from '@/views/BankMapView.vue'
-import BankView from '@/views/BankView.vue'
 import ExchangeRateView from '@/views/ExchangeRateView.vue'
 import HomeView from '@/views/HomeView.vue'
 import LogInView from '@/views/LogInView.vue'
@@ -17,6 +16,8 @@ import NotFoundView from '@/views/NotFoundView.vue'
 import BankTotalView from '@/views/BankTotalView.vue' 
 import BankListDepositView from '@/views/BankListDepositView.vue'
 import BankListSavingsView from '@/views/BankListSavingsView.vue'
+import BankDepositDetailView from '@/views/BankDepositDetailView.vue'
+import BankSavingsDetailView from '@/views/BankSavingsDetailView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,11 +47,11 @@ const router = createRouter({
       name: 'banklist_deposit',
       component: BankListDepositView
     },
-    {
-      path: '/bank',
-      name: 'bank',
-      component: BankView
-    },
+    // {
+    //   path: '/bank/:id',
+    //   name: 'bank',
+    //   component: BankView
+    // },
     {
       path: '/profile',
       name: 'profile',
@@ -104,6 +105,16 @@ const router = createRouter({
       path: '/banklist_savings',
       name: 'banklist_savings',
       component: BankListSavingsView
+    },
+    {
+      path: '/BankDepositDetail/:id',
+      name: 'BankDepositDetail',
+      component: BankDepositDetailView
+    },
+    {
+      path: '/BankSavingsDetail/:id',
+      name: 'BankSavingsDetail',
+      component: BankSavingsDetailView
     },
   ]
 })

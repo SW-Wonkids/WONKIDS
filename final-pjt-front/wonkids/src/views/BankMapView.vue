@@ -6,11 +6,11 @@
       v-for="option in options" 
       :key="option.value" 
       :value="option.value">
-        {{ option.text }}
+        {{ option.text }} 
       </option>
     </select>
 
-    <div>우리동네 근처 은행을 검색하자!: {{ selected }} </div>
+    <div>우리동네 근처 은행을 검색하자: {{ selected }} </div>
 
     <!--지도가 표시되는 영역 id=map으로 설정 -->
     <div id="map"></div>
@@ -56,11 +56,11 @@ const initMap = () => {
 
 const selected = ref('');
 const options = ref([
-{ text: '유성구 은행', value: '대전 유성구 은행' },
-{ text: '대덕구 은행', value: '대전 대덕구 은행' },
-{ text: '서구 은행', value: '대전 서구 은행' },
-{ text: '중구 은행', value: '대전 중구 은행' },
-{ text: '동구 은행', value: '대전 동구 은행' },
+{ text: '유성구 은행', value: '유성구 은행' },
+{ text: '대덕구 은행', value: '대덕구 은행' },
+{ text: '서구 은행', value: '서구 은행' },
+{ text: '중구 은행', value: '중구 은행' },
+{ text: '동구 은행', value: '동구 은행' },
 ]);
 
 const searchBanks = () => {

@@ -9,12 +9,16 @@
     <p>저축 기간 {{ bank.save_trm_12 }}(개월) - 저축 금리 {{ bank.intr_rate_12 }}</p>
     <p>저축 기간 {{ bank.save_trm_24 }}(개월) - 저축 금리 {{ bank.intr_rate_24 }}</p>
     <p>저축 기간 {{ bank.save_trm_36 }}(개월) - 저축 금리 {{ bank.intr_rate_36 }}</p>
+    <RouterLink :to="{name: 'BankDepositDetail', params: {id: bank.id}}">
+      [상세정보 바로가기]
+    </RouterLink>
     <hr>
 
   </div>
 </template>
 
 <script setup>
+import { RouterLink} from 'vue-router'
 defineProps({
   bank: Object
 })
