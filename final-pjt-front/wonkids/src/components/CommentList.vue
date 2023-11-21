@@ -21,8 +21,6 @@ const props = defineProps({
 
 const deleteComment = function () {
   store.deleteComment(props.comment.id)
-  // 페이지 이동
-  // router.push({ name: 'detail', params: {pk: pk} })
   router.go(0)
 }
 </script>
