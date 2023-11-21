@@ -1,32 +1,37 @@
 <template>
-  <!-- 1. 사람이 input값 넣는다
-      2. 큰 도시의 구만 드롭다운 만들고 은행 드롭다운 만들어서 
-      두개의 벨류값을 합쳐서 제출한다
-      -->
   <div>
-      <!-- 드롭다운 만들기 -->
-    <select v-model="selected" @change="searchPlaces">
-      <option v-for="option in options" :key="option.value" :value="option.value">
-        {{ option.text }}
+      <!-- Dropdown <select> -->
+    <select v-model="selected" @change="searchBanks">
+      <option 
+      v-for="option in options" 
+      :key="option.value" 
+      :value="option.value">
+        {{ option.text }} 
       </option>
     </select>
-    <div>선택됨: {{ selected }}</div>
-    <!-- 지도 표시 -->
+
+    <div>우리동네 근처 은행을 검색하자: {{ selected }} </div>
+
+    <!--지도가 표시되는 영역 id=map으로 설정 -->
     <div id="map"></div>
+
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 
+// 입력값에 따라 변할 수 있도록 let 사용
 let map = null;
 let infowindow = null;
-let ps = null;
+let places = null;
 
 onMounted(() => {
+  // window DOM 에 카카오 객체가 있고 카카오 맵도 그릴 수 있다면 initMap()으로 맵을 실행한다 
   if (window.kakao && window.kakao.maps) {
     initMap();
   } else {
+   
     const script = document.createElement('script');
     script.onload = () => kakao.maps.load(initMap);
     script.src = `//dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=${import.meta.env.VITE_APP_KAKAO_MAP_KEY}&libraries=services`;
@@ -34,32 +39,35 @@ onMounted(() => {
   }
 });
 
+// 지도를 띄우는 함수 
+// map 객체 두번째 파라미터 options의 속성 중 center는 지도 생성에 반드시 필요
 const initMap = () => {
-  const container = document.getElementById('map');
-  const options = {
-    center: new kakao.maps.LatLng(36.3508, 127.3839),
-    level: 7,
+  const container = document.getElementById('map');  // 지도를 담을 영역의 DOM 레퍼런스
+  const options = {  // 지도를 생성할 때 필요한 기본 옵션
+    center: new kakao.maps.LatLng(37.566826, 126.9786567),   // 지도의 중심좌표: LatLng 클래스는 위도, 경도 좌표값 입력
+    level: 7,    //지도의 레벨 (확대, 축소 정도)  
   };
 
-  map = new kakao.maps.Map(container, options);
-  infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-  ps = new kakao.maps.services.Places();
+  map = new kakao.maps.Map(container, options)  // 지도 생성 및 객체 리턴
+  // 검색하기 위한 변수들
+  infowindow = new kakao.maps.InfoWindow({ zIndex: 1 })
+  places = new kakao.maps.services.Places()
 };
 
 const selected = ref('');
 const options = ref([
-{ text: '유성구 은행', value: '대전 은행' },
-{ text: '대덕구 은행', value: '대전 대덕구 은행' },
-{ text: '서구 은행', value: '대전 서구 은행' },
-{ text: '중구 은행', value: '대전 중구 은행' },
-{ text: '동구 은행', value: '대전 동구 은행' },
+{ text: '유성구 은행', value: '유성구 은행' },
+{ text: '대덕구 은행', value: '대덕구 은행' },
+{ text: '서구 은행', value: '서구 은행' },
+{ text: '중구 은행', value: '중구 은행' },
+{ text: '동구 은행', value: '동구 은행' },
 ]);
 
-const searchPlaces = () => {
-  ps.keywordSearch(selected.value, placesSearchCB);
+const searchBanks = () => {
+  places.keywordSearch(selected.value, placesSearchCallback);
 };
 
-const placesSearchCB = (data, status, pagination) => {
+const placesSearchCallback = (data, status) => {
   if (status === kakao.maps.services.Status.OK) {
     const bounds = new kakao.maps.LatLngBounds();
 
@@ -87,7 +95,9 @@ const displayMarker = (place) => {
 
 <style scoped>
 #map {
-  width: 100%;
-  height: 350px;
+  width: 500px;
+  height: 400px;
+  margin-left: 50px;
+  border: 5px dashed pink
 }
 </style>

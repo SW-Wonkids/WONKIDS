@@ -154,8 +154,23 @@ def bank_list_savings(request):
     
     
 
-# @api_view(['GET', 'POST'])
-# def bank_detail_deposit(request, bank_pk):
+@api_view(['GET'])
+def bank_detail_deposit(request, bank_pk):
+    bank_deposit = get_object_or_404(Deposit, pk=bank_pk)
+    if request.method == 'GET':
+        serializer = DepositSerializer(bank_deposit)
+        print(serializer.data)
+        return Response(serializer.data)
+
+
+@api_view(['GET'])
+def bank_detail_savings(request, bank_pk):
+    bank_savings = get_object_or_404(Savings, pk=bank_pk)
+    if request.method == 'GET':
+        serializer = SavingsSerializer(bank_savings)
+        print(serializer.data)
+        return Response(serializer.data)
+
 #     # 정기예금 데이터 가져오기
 #     API_KEY = settings.API_KEY
 #     deposit_url = f'http://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json?auth={API_KEY}&topFinGrpNo=020000&pageNo=1'
