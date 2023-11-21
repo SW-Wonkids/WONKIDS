@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>article list</h1>
-    <RouterLink :to="{name:'article-create'}"> 게시글 생성</RouterLink>
+    <RouterLink :to="{name:'article-create'}">게시글 생성</RouterLink>
     <ul>
       <div
           v-for="article in store.articleList"
@@ -31,7 +31,7 @@ onMounted(() => {
 })
 
 const goDetail = (pk) => {
-  router.push({name:'article', params:{pk: pk}})
+  router.push({name:'article', params:{pk: pk} })
 }
 
 </script>

@@ -3,9 +3,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ArticleCreateView from '@/views/ArticleCreateView.vue'
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleView from '@/views/ArticleView.vue'
+import ArticleUpdateView from '@/views/ArticleUpdateView.vue'
+
 import BankMapView from '@/views/BankMapView.vue'
 import BankView from '@/views/BankView.vue'
+
 import ExchangeRateView from '@/views/ExchangeRateView.vue'
+
 import HomeView from '@/views/HomeView.vue'
 import LogInView from '@/views/LogInView.vue'
 import LogOutView from '@/views/LogOutView.vue'
@@ -13,6 +17,7 @@ import PollView from '@/views/PollView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import SignUpView from '@/views/SignUpView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
+
 // 정기예금 , 적금 데이터 출력 관련 페이지 
 import BankTotalView from '@/views/BankTotalView.vue' 
 import BankListDepositView from '@/views/BankListDepositView.vue'
@@ -72,9 +77,14 @@ const router = createRouter({
       component: ArticleListView
     },
     {
-      path: '/article',
+      path: '/article/:pk',
       name: 'article',
       component: ArticleView
+    },
+    {
+      path: '/article-update',
+      name: 'article-update',
+      component: ArticleUpdateView
     },
     {
       path: '/exchange-rate',

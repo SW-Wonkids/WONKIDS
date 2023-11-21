@@ -7,5 +7,5 @@ urlpatterns = [
     path('category/', views.category),
     path('<int:article_pk>/', views.article_detail),
     path('<int:article_pk>/comments/', views.comment_create),
-    path('<int:article_pk>/comments/<int:comment_pk>/', views.comment_detail),
+    path('comments/<int:comment_pk>/', views.comment_detail),
 ]
