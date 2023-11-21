@@ -26,3 +26,10 @@ class CustomRegisterSerializer(RegisterSerializer):
         adapter.save_user(request, user, self)
         self.custom_signup(request, user)
         return user
+
+
+# 추가
+class CustomUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'

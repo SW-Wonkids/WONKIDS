@@ -175,6 +175,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 사용자 수정
+# AUTH_USER_MODEL = 'accounts.User'
+# Django-allauth에서 사용자 모델 가져오기
 AUTH_USER_MODEL = 'accounts.User'
 
 # ALL AUTH 수정
@@ -216,4 +218,4 @@ environ.Env.read_env(
   env_file=os.path.join(BASE_DIR, '.env')
 )
 
-# API_KEY = env('API_KEY')
+API_KEY = env('API_KEY')
