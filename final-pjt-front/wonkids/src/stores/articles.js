@@ -73,6 +73,7 @@ export const useArticleStore = defineStore('article', () => {
     })
     }
     
+    // article 삭제
     const deleteArticle = function (pk) {
         axios({
             method: 'delete',

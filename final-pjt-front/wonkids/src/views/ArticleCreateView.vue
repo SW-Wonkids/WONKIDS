@@ -50,7 +50,7 @@ const createArticle = function () {
     category: category.value
   }
   articleStore.createArticle(article)
-  router.push({name: 'article-create'})
+  router.push({name: 'article-list'})
 }
 </script>
 
