@@ -1,7 +1,7 @@
 <!--BankListDepositView > BankListDeposit > BankDeposit > BankDepositDetailView -->
 <template>
   <div>
-    <h1>정기예금 상세</h1>
+    <p class="topic">구체적으로 이 정기예금 금융상품에 대해 알아보자!</p>
     <div v-if="bank">
       <p>공시 제출월[YYYYMM] : {{ bank.dcls_month }}</p>
       <p>금융회사 명 : {{ bank.kor_co_nm }}</p>
@@ -41,6 +41,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+.topic {
+  text-decoration: cadetblue wavy underline;
+}
 </style>
 

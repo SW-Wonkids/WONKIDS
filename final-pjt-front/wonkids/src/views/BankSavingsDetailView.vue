@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <h1>Detail</h1>
+    <p class="topic">구체적으로 이 적금 금융상품에 대해 알아보자!</p>
     <div v-if="bank">
       <p>공시 제출월[YYYYMM] : {{ bank.dcls_month }}</p>
       <p>금융회사 명 : {{ bank.kor_co_nm }}</p>
@@ -42,6 +42,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+.topic {
+  text-decoration: cadetblue wavy underline;
+}
 </style>
 
