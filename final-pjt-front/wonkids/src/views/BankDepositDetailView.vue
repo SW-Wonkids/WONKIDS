@@ -1,4 +1,4 @@
-<!--BankListDepositView > BankListDeposit > BankDeposit 정기예금 vue page -->
+<!--BankListDepositView > BankListDeposit > BankDeposit > BankDepositDetailView -->
 <template>
   <div>
     <h1>정기예금 상세</h1>
@@ -9,6 +9,9 @@
       <p>가입제한 : {{ bank.join_deny }}</p>
       <p>가입 방법 : {{ bank.join_way }}</p>
       <p>우대조건 : {{ bank.spcl_cnd }}</p>
+      <RouterLink :to="{name: 'banklist_deposit'}">
+      [BACK]
+      </RouterLink>
     </div>
 
   </div>
@@ -19,7 +22,7 @@ import axios from 'axios'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import {useBankStore} from '@/stores/banks'
-
+import { RouterLink} from 'vue-router'
 const store = useBankStore()
 const route = useRoute()
 const bank = ref(null)
