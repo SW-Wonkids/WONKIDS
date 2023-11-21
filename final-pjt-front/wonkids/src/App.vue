@@ -1,4 +1,5 @@
 <script setup>
+
 import { RouterLink, RouterView } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 
@@ -14,7 +15,7 @@ const store = useAuthStore()
         <RouterLink :to="{name: 'home'}">Home</RouterLink>
         <RouterLink :to="{name: 'logout'}">Log Out</RouterLink>
         <RouterLink :to="{name: 'profile'}">Profile</RouterLink>
-        <RouterLink :to="{name: 'banklist'}">Bank</RouterLink>
+        <RouterLink :to="{name: 'banktotal'}">Bank</RouterLink>
         <RouterLink :to="{name: 'article-list'}">Article</RouterLink>
         <RouterLink :to="{name: 'poll'}">Poll</RouterLink>
       </nav>
@@ -22,7 +23,7 @@ const store = useAuthStore()
         <RouterLink :to="{name: 'home'}">Home</RouterLink>
         <RouterLink :to="{name: 'signup'}">Sign Up</RouterLink>
         <RouterLink :to="{name: 'login'}">Log In</RouterLink>
-        <RouterLink :to="{name: 'banklist'}">Bank</RouterLink>
+        <RouterLink :to="{name: 'banktotal'}">Bank</RouterLink>
         <RouterLink :to="{name: 'article-list'}">Article</RouterLink>
         <RouterLink :to="{name: 'poll'}">Poll</RouterLink>
       </nav>

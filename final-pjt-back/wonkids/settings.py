@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # 토큰 인증 시스템을 위해 등록
     'rest_framework.authtoken',
+    'corsheaders',
 
     # Dj-Rest_Auth 라이브러리 사용 위해 등록
     'dj_rest_auth',
@@ -98,7 +99,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'wonkids.urls'
 
 CORS_ALLOWED_ORIGINS = [
-   "http://localhost:5173"
+   "http://localhost:5173",
+   'http://127.0.0.1:5173',
 ]
 
 TEMPLATES = [
@@ -214,4 +216,4 @@ environ.Env.read_env(
   env_file=os.path.join(BASE_DIR, '.env')
 )
 
-# API_KEY = env('API_KEY')
+API_KEY = env('API_KEY')
