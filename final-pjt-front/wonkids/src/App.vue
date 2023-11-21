@@ -18,6 +18,7 @@ const store = useAuthStore()
         <RouterLink :to="{name: 'banktotal'}">Bank</RouterLink>
         <RouterLink :to="{name: 'article-list'}">Article</RouterLink>
         <RouterLink :to="{name: 'poll'}">Poll</RouterLink>
+        <RouterLink :to="{name: 'exchange-rate'}">Exchange-rate</RouterLink>
       </nav>
       <nav v-else>
         <RouterLink :to="{name: 'home'}">Home</RouterLink>
@@ -26,6 +27,7 @@ const store = useAuthStore()
         <RouterLink :to="{name: 'banktotal'}">Bank</RouterLink>
         <RouterLink :to="{name: 'article-list'}">Article</RouterLink>
         <RouterLink :to="{name: 'poll'}">Poll</RouterLink>
+        <RouterLink :to="{name: 'exchange-rate'}">Exchange-rate</RouterLink>
       </nav>
     </div>
   </header>

@@ -61,9 +61,12 @@ const amountOne = ref(0)
 const amountTwo = ref(0)
 
 const fetchData = () => {
+  // fetch(`https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRW${currency_one.value}`)
+  // fetch(`https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?${process.env.VUE_APP_KEY}&searchdate=20180102&data=AP01`)
   fetch(`https://v6.exchangerate-api.com/v6/${import.meta.env.VITE_APP_API_KEY}/latest/${currency_one.value}`)
     .then(res => res.json())
     .then(responseData => {
+      console.log(responseData)
       data.value = responseData
       rate.value = responseData.conversion_rates[currency_two.value]
       amountTwo.value = (amountOne.value * rate.value)
