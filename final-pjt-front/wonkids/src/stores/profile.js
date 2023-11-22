@@ -4,7 +4,7 @@ import { useAuthStore } from './auth.js'
 import { defineStore } from 'pinia' 
 
 export const useProfileStore = defineStore('profile', () => {
-  const users = ref([])
+  const userinfo = ref([])
   const API_URL = 'http://127.0.0.1:8000'
   const authStore = useAuthStore()
   const token = ref(authStore.token)
@@ -14,17 +14,19 @@ export const useProfileStore = defineStore('profile', () => {
 
     axios({
       method: 'get',
-      url: `${API_URL}/accounts/user/`, 
+      url: `${API_URL}/accounts/profile/`, 
       headers: {
-        Authorization: `Token ${token.value}`
+        Authorization: `Token ${token.value}` 
       }
     })
       .then(res => {
-        console.log(res)
-        console.log(res.data)
-        users.value = res.data
+        // console.log(res)
+        // console.log(res.data)
+        console.log('아오 보경시치')
+        userinfo.value = res.data
+        // console.log(userinfo.value.username)
       })
       .catch(err => console.log(err))
   }
-  return {users, API_URL, getProfile}
+  return {userinfo, API_URL, getProfile}
 }, {persist: true})
