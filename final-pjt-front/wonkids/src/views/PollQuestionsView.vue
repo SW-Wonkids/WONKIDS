@@ -5,6 +5,8 @@
       <div v-if="currentQuestionIndex < questions.length">
         <div class="question">
           <p>{{ questions[currentQuestionIndex].text }}</p>
+          <p>{{ answersA[currentQuestionIndex].text }}</p>
+          <p>{{ answersB[currentQuestionIndex].text }}</p>
           <button @click="answerQuestion(1)">A</button>
           <button @click="answerQuestion(0)">B</button>
         </div>
@@ -39,7 +41,22 @@ const questions = ref([
   { text: "질문4." },
   { text: "질문5." },
 ])
+const answersA = ref([
+  { text: "답변1A." },
+  { text: "답변2A." },
+  { text: "답변3A." },
+  { text: "답변4A." },
+  { text: "답변5A." },
+])
+const answersB = ref([
+  { text: "답변1B." },
+  { text: "답변2B." },
+  { text: "답변3B." },
+  { text: "답변4B." },
+  { text: "답변5B." },
+])
 const answers = ref([])
+
 const result = ref("")
 
 const answerQuestion = (score) => {
