@@ -25,8 +25,6 @@ const store = useAuthStore()
         <RouterLink :to="{name: 'signup'}">Sign Up</RouterLink>
         <RouterLink :to="{name: 'login'}">Log In</RouterLink>
         <RouterLink :to="{name: 'banktotal'}">Bank</RouterLink>
-        <RouterLink :to="{name: 'article-list'}">Article</RouterLink>
-        <RouterLink :to="{name: 'poll'}">Poll</RouterLink>
         <RouterLink :to="{name: 'exchange-rate'}">Exchange-rate</RouterLink>
       </nav>
     </div>
