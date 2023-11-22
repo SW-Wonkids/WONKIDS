@@ -22,7 +22,6 @@ export const useProfileStore = defineStore('profile', () => {
       .then(res => {
         // console.log(res)
         // console.log(res.data)
-        console.log('아오 보경시치')
         userinfo.value = res.data
         // console.log(userinfo.value.username)
       })

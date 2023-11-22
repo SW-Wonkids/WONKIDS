@@ -30,6 +30,6 @@ export const usePollStore = defineStore('poll', () => {
       }
     })
   }
-  return { sendResult }
+  return { sendResult, getResult }
 })
   
