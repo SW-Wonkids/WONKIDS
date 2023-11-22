@@ -6,10 +6,11 @@ from allauth.account.adapter import DefaultAccountAdapter
 class User(AbstractUser):
     username = models.CharField(max_length=15, unique=True)
     email = models.EmailField(max_length=254, blank=True, null=True)
-    category = models.IntegerField(blank=True, null=True)
-
-    # 리스트 데이터 저장을 위해 text 형태로 저장
-    financial_products = models.TextField(blank=True, null=True)
+    category = models.CharField(max_length=10, blank=True, null=True)
+    age = models.IntegerField(blank=True, null=True)
+    school = models.CharField(max_length=10, blank=True, null=True)
+    grade = models.IntegerField(blank=True, null=True)
+    classnum = models.IntegerField(blank=True, null=True)
 
     # superuser fields
     is_active = models.BooleanField(default=True)
@@ -32,23 +33,29 @@ class CustomAccountAdapter(DefaultAccountAdapter):
         email = data.get("email")
         username = data.get("username")
         category = data.get("category")
-        financial_product = data.get("financial_products")
+        age = data.get("age")
+        school = data.get("school")
+        grade = data.get("grade")
+        classnum = data.get("classnum")
 
         user_email(user, email)
         user_username(user, username)
+
         if first_name:
             user_field(user, "first_name", first_name)
         if last_name:
             user_field(user, "last_name", last_name)
+
         if category:
             user.category = category
-        if financial_product:
-            financial_products = user.financial_products.split(',')
-            financial_products.append(financial_product)
-            
-            if len(financial_products) > 1:
-                financial_products = ','.join(financial_products)
-            user_field(user, "financial_products", financial_products)
+        if age:
+            user.age = age
+        if school:
+            user.school = school
+        if grade:
+            user.grade = grade
+        if classnum:
+            user.classnum = classnum
 
         if "password1" in data:
             user.set_password(data["password1"])
