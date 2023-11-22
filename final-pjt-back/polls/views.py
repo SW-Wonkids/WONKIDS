@@ -20,24 +20,9 @@ def polls(request):
 
     if request.method == 'POST':
         user = get_object_or_404(get_user_model(), username=request.user)
-        
-        if request.data.get('pokemon') == '피카츄':
-            data = {'category': 0}
-            serializer = PokemonSerializer(user, data=data, partial=True)
-            if serializer.is_valid(raise_exception=True):
-                serializer.save()
-                return Response(serializer.data)
-
-        elif request.data.get('pokemon') == '파이리':
-            data = {'category': 1}
-            serializer = PokemonSerializer(user, data=data, partial=True)
-            if serializer.is_valid(raise_exception=True):
-                serializer.save()
-                return Response(serializer.data)
-
-        elif request.data.get('pokemon') == '꼬부기':
-            data = {'category': 2}
-            serializer = PokemonSerializer(user, data=data, partial=True)
-            if serializer.is_valid(raise_exception=True):
-                serializer.save()
-                return Response(serializer.data)
+        pokemon = request.data.get('pokemon')
+        data = {'category': pokemon}
+        serializer = PokemonSerializer(user, data=data, partial=True)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)

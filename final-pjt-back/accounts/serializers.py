@@ -8,15 +8,29 @@ from dj_rest_auth.registration.serializers import RegisterSerializer
 
 class CustomRegisterSerializer(RegisterSerializer):
     # 추가할 필드들을 정의합니다.
-    category = serializers.IntegerField(required=False)
-    financial_products = serializers.ListField(child=serializers.IntegerField(), required=False)
+    category = serializers.CharField(
+        required=False,
+        allow_blank=True,
+        max_length=10
+    )
+    age = serializers.IntegerField(required=False)
+    school = serializers.CharField(
+        required=False,
+        allow_blank=True,
+        max_length=10
+    )
+    grade = serializers.IntegerField(required=False)
+    classnum = serializers.IntegerField(required=False)
     
     def get_cleaned_data(self):
         return {
             'username': self.validated_data.get('username', ''),
             'password1': self.validated_data.get('password1', ''),
             'category': self.validated_data.get('category', ''),
-            'financial_products': self.validated_data.get('financial_products', ''),
+            'age': self.validated_data.get('category', ''),
+            'school': self.validated_data.get('category', ''),
+            'grade': self.validated_data.get('category', ''),
+            'classnum': self.validated_data.get('category', ''),
         }
     
     def save(self, request):
@@ -32,4 +46,4 @@ class CustomRegisterSerializer(RegisterSerializer):
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'category')
+        fields = ('id', 'username', 'email', 'category', 'age', 'school', 'grade', 'classnum')
