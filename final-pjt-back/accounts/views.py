@@ -4,9 +4,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import User
 from .serializers import CustomUserSerializer
+from django.contrib.auth import get_user_model
 # Create your views here.
-class UserAPIView(APIView):
-    def get(self, request):
-        users = User.objects.all()
-        serializer = CustomUserSerializer(users, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+
+def getuser(request):
+    users = request.user
+    serializer = CustomUserSerializer(users)
+    return Response(serializer.data, status=status.HTTP_200_OK)
