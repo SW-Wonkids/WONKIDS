@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 from accounts.views import UserAPIView
 
 urlpatterns = [
-    path('api/users/', UserAPIView.as_view(), name='user-list'),
-]
+    path('', include('dj_rest_auth.urls')),
+    path('profile/', UserAPIView.as_view(), name='user-list'),
+] 

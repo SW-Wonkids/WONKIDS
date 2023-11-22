@@ -23,4 +23,4 @@ onMounted(() => {
 
 <style scoped>
 
-</style>
+</style>  
