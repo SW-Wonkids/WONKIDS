@@ -27,12 +27,14 @@ const store = useAuthStore()
 const username = ref(null)
 const password1 = ref(null)
 const password2 = ref(null)
+const email = ref(null)
 
 const signUp = function () {
   const payload = {
     username: username.value,
     password1: password1.value,
-    password2: password2.value
+    password2: password2.value,
+    email: email.value
   }
   store.signUp(payload)
 }
