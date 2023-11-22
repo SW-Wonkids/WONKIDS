@@ -14,7 +14,7 @@ export const useProfileStore = defineStore('profile', () => {
 
     axios({
       method: 'get',
-      url: `${API_URL}/accounts/user/`, 
+      url: `${API_URL}/accounts/profile/`, 
       headers: {
         Authorization: `Token ${token.value}`
       }
