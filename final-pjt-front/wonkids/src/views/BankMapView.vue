@@ -56,11 +56,11 @@ const initMap = () => {
 
 const selected = ref('');
 const options = ref([
-{ text: '유성구 은행', value: '유성구 은행' },
-{ text: '대덕구 은행', value: '대덕구 은행' },
-{ text: '서구 은행', value: '서구 은행' },
-{ text: '중구 은행', value: '중구 은행' },
-{ text: '동구 은행', value: '동구 은행' },
+{ text: '유성구 은행', value: '대전 유성구 은행' },
+{ text: '대덕구 은행', value: '대전 대덕구 은행' },
+{ text: '서구 은행', value: '대전 서구 은행' },
+{ text: '중구 은행', value: '대전 중구 은행' },
+{ text: '동구 은행', value: '대전 동구 은행' },
 ]);
 
 const searchBanks = () => {
