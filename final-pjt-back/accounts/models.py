@@ -64,7 +64,7 @@ class CustomAccountAdapter(DefaultAccountAdapter):
         self.populate_username(request, user)
         
         if commit:
-        # Ability not to commit makes it easier to derive from
-        # this adapter by adding
-            user.save()
+            # Ability not to commit makes it easier to derive from
+            # this adapter by adding
+            user.save()  # user.save() 호출 후에 추가 작업 수행
         return user
