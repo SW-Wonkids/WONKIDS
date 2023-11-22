@@ -20,7 +20,7 @@ export const useBankStore = defineStore('bank', () => {
       .catch(err => console.log(err))
   }
 
-  // 적금 데이터 가져오는 함수
+  // 적금 데이터 가져오는 함수 
   const getBanksSavings = function () {
     axios({
       method: 'get',

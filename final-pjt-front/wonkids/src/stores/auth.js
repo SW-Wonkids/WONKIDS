@@ -19,12 +19,13 @@ export const useAuthStore = defineStore('counter', () => {
         const username = payload.username
         const password1 = payload.password1
         const password2 = payload.password2
+        const email = payload.email
 
         axios({
             method: 'post',
             url: `${API_URL}/accounts/signup/`,
             data: {
-                username, password1, password2
+                username, password1, password2, email
             }
         })
         .then(res => {
