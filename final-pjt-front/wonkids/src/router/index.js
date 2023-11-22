@@ -12,7 +12,7 @@ import ExchangeRateView from '@/views/ExchangeRateView.vue'
 import HomeView from '@/views/HomeView.vue'
 import LogInView from '@/views/LogInView.vue'
 import LogOutView from '@/views/LogOutView.vue'
-import PollView from '@/views/PollView.vue'
+import PollQuestionsView from '@/views/PollQuestionsView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import SignUpView from '@/views/SignUpView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
@@ -95,7 +95,7 @@ const router = createRouter({
     {
       path: '/poll',
       name: 'poll',
-      component: PollView
+      component: PollQuestionsView
     },
     {
       path: '/notfound',

@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { useAuthStore } from '@/stores/auth'
 
-// merge test
+
 export const useArticleStore = defineStore('article', () => {
     const authStore = useAuthStore()
     const token = ref(authStore.token)
