@@ -74,7 +74,7 @@ const sendResult = () => {
   store.sendResult(pokemon)
   // console.log(pokemon)
   // console.log('send')
-//   router.push({name:profile})
+  router.push({ name: 'profile' })
 }
 </script>
 
