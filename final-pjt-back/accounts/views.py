@@ -11,11 +11,13 @@ from django.shortcuts import get_object_or_404
 
 @api_view(['GET'])
 def getuser(request):
-  pass
-    # print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
-    # print(request)
-    # user = get_object_or_404(get_user_model(), username=request.user)
-    # serializer = CustomUserSerializer(user)
-    # # if serializer.is_valid(raise_exception=True):
-    # #     serializer.save()
-    # return Response(serializer.data, status=status.HTTP_200_OK) 
+
+  print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+  print(request.user)
+  user = get_object_or_404(get_user_model(), username=request.user)
+  serializer = CustomUserSerializer(user)
+  print('ser', serializer.data)
+  # if serializer.is_valid(raise_exception=True):
+  #   serializer.save()
+  print('!!!!!!!!!!!!!!!!!!!!')
+  return Response(serializer.data, status=status.HTTP_200_OK) 
