@@ -5,8 +5,8 @@
       <div v-if="currentQuestionIndex < questions.length">
         <div class="question">
           <p>{{ questions[currentQuestionIndex].text }}</p>
-          <button @click="answerQuestion(1)">1점을 가지는 선택지</button>
-          <button @click="answerQuestion(0)">0점을 가지는 선택지</button>
+          <button @click="answerQuestion(1)">A</button>
+          <button @click="answerQuestion(0)">B</button>
         </div>
       </div>
       <div v-else>

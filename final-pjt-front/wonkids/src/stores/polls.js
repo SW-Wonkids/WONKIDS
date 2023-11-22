@@ -20,6 +20,16 @@ export const usePollStore = defineStore('poll', () => {
       }
     })
   }
+
+  const getResult = function () {
+    axios({
+      method: 'get',
+      url: 'http://127.0.0.1:8000/api/v1/poll/',
+      headers: {
+        Authorization: `Token ${token.value}`
+      }
+    })
+  }
   return { sendResult }
 })
   
