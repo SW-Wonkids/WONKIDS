@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-- Dropdown <select> -->
-    <select v-model="selected" @change="searchBanks">
+    <select v-model="selected" @change="searchBanks" style="margin-left: 50px;">
       <option 
       v-for="option in options" 
       :key="option.value" 
@@ -10,7 +10,7 @@
       </option>
     </select>
 
-    <div>우리동네 근처 은행을 검색하자: {{ selected }} </div>
+    <div><p style="margin-top: 10px; margin-left: 50px; font-family: 'NanumBarunGothicYetHangul';">우리동네 근처 은행을 검색하자:</p> {{ selected }} </div>
 
     <!--지도가 표시되는 영역 id=map으로 설정 -->
     <div id="map"></div>

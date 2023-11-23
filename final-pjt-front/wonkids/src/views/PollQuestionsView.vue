@@ -1,6 +1,6 @@
 <template>
-  <hr>
-  <div id="app">
+  <hr style="margin-left: 55px; margin-right: 55px;">
+  <div id="app" style="margin-left: 55px; margin-right: 55px;font-family: 'NanumBarunGothicYetHangul';">
     <h1>Vue Type Quiz</h1>
     <hr>
     <div v-if="showQuiz">
@@ -9,8 +9,8 @@
           <p>{{ questions[currentQuestionIndex].text }}</p>
           <p>{{ answersA[currentQuestionIndex].text }}</p>
           <p>{{ answersB[currentQuestionIndex].text }}</p>
-          <button @click="answerQuestion(1)">A</button>
-          <button @click="answerQuestion(0)">B</button>
+          <button class="selectbutton" @click="answerQuestion(1)">A</button>
+          <button class="selectbutton" @click="answerQuestion(0)">B</button>
         </div>
       </div>
       <div v-else>
@@ -102,4 +102,15 @@ hr {
   border: 10px solid green;
   border-radius: 5px;
 }
+
+.selectbutton {
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+
+  font-size: 30px;
+  margin-right: 55px;
+
+}
+
 </style>
