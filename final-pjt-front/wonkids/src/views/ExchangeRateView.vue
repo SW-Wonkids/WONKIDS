@@ -1,8 +1,8 @@
 <template>
-  <hr>
+  <hr style="margin-left: 55px; margin-right: 55px;">
   <div id="app">
     <h1><img src="@/assets/exchangeRate.png" class="d-block w-100" style="max-width: 500px; height: auto; text-align: left;"></h1>
-    <p>환율계산기</p>
+    <p class="koreanfont">환율계산기</p>
     <div class="container">
       <div class="container-one">
         <!-- options -->
@@ -28,7 +28,7 @@
         <button @click="switchValues()"><span>Switch</span></button>
         
       </div>
-      <h4 class="baseValue">1 {{ currency_one }} = {{ rate }} {{ currency_two }}</h4>
+      <h4 class="baseValue koreanfont" style="margin-top: 8px;">1 {{ currency_one }} = {{ rate }} {{ currency_two }}</h4>
 
       <!-- options -->
       <div class="container-three">
@@ -45,15 +45,15 @@
 
       <!-- date -->
       <div class="container-four">
-        <h4 class="h4">반영 날짜:  {{ data.time_last_update_utc }}</h4>
+        <h4 class="h4 koreanfont" style="margin-top: 5px;">환율 계산 기준 일자:  {{ data.time_last_update_utc }}</h4>
       </div>
       
     </div>
   </div>
-  <div class="card" style="width: 100vh;">
+  <div class="card koreanfont" style="width: 90vh; margin-top: 50px; margin-right: 55px;">
     <div class="card-body">
       <h5 class="card-title">환율에 대해 알아볼까요?</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">환율 계산기</h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">환율</h6>
       <p class="card-text">
         각 나라마다 쓰는 화폐가 다르기 때문에 그 나라에 간다면 우리나라 돈을 그 나라의 돈으로 바꿔야 해요 <br>
         환율은 이렇게 우리나라 돈과 다른 나라 돈을 교환할 때 사용하는 교환 비율입니다 <br>
@@ -193,9 +193,6 @@ h1{
   right: 0;
 
 }
-
-
-
 
 select {
   padding: 5px;

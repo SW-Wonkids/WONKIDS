@@ -1,6 +1,8 @@
 <template>
-  <div class="background">
+  <div class="background koreanfont" style="margin-left: 50px; margin-right: 50px;">
     <h1>Trainer Community</h1>
+
+    <div></div>
     <button type="button" class="btn btn-light" style="margin-left: 33px;"><RouterLink :to="{name:'article-create'}">게시글 생성</RouterLink></button>
     <ul>
       <div

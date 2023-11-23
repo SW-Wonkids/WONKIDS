@@ -132,3 +132,8 @@ nav a:first-of-type {
   }
 } */
 </style>
+<style>
+.koreanfont {
+  font-family: 'NanumBarunGothicYetHangul';
+}
+</style>

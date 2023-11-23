@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="koreanfont" style="margin-left: 55px; margin-right: 55px;">
     <h1>Catch the Pokemon!</h1>
-    <p>유형검사를 시작해봅시다!</p>
+    <p class="koreanfont">유형검사를 시작해봅시다!</p>
     <form @submit.prevent="goPollQuestions">
-        <input type="submit" value="유형 검사 시작하기">
+        <input type="submit" value="유형 검사 시작하기" class="koreanfont">
     </form>
   </div>
 </template>

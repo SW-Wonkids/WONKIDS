@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="createComment">
-    <label for="content">내용 : </label>
-    <input type="text" name="content" id="content" v-model="content">
+    <label for="content" style="margin-right: 10px;">내용 : </label>
+    <input type="text" name="content" id="content" v-model="content" style="margin-right: 10px;">
     <button>댓글 작성</button>
   </form>
 </template>

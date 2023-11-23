@@ -1,9 +1,9 @@
 <template>
-  <div class="post-details">
-    <h1>게시글 상세 정보</h1>
+  <div class="post-details koreanfont">
+    <h1>게시글 정보</h1>
     <div class="post-info">
       <p class="category">{{ store.articleDetail.category?.name }}</p>
-      <p class="post-id">{{ store.articleDetail.id }} 번 글</p>
+
       <p class="post-title">{{ store.articleDetail.title }}</p>
     </div>
     <hr>
@@ -13,7 +13,7 @@
     </div>
     <hr>
     <p class="post-content">{{ store.articleDetail.content }}</p>
-    <button @click="updateArticle">수정</button>
+    <button @click="updateArticle" style="margin-right: 10px;">수정</button>
     <button @click="deleteArticle">삭제</button>
     <hr>
     <CommentCreate 
@@ -64,6 +64,9 @@ const deleteArticle = function () {
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #fff;
+  border-radius: 8px;
+  background-image: url('@/assets/case4.webp');
+  
 }
 
 .post-info {

@@ -1,5 +1,5 @@
 <template>
-    <div class="create-post-page">
+    <div class="create-post-page koreanfont">
       <h1>게시글 수정 페이지</h1>
       <form @submit.prevent="updateArticle" class="post-form">
         <label for="category" class="form-label">카테고리 선택:</label>
@@ -61,11 +61,14 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    background-image: url('@/assets/carousel3.jpg');
+    border-radius: 2%;
   }
   
   h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: lightskyblue;
   }
   
   .post-form {
@@ -73,6 +76,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
+    
   }
   
   .form-label {

@@ -1,5 +1,6 @@
 <template>
-    <h1>{{ userinfo.username }} 포켓몬 트레이너의 프로필 페이지</h1>
+  <div class="koreanfont" style="margin-left: 55px;">
+    <h3 style="text-align: center;">포켓몬 트레이너 {{ userinfo.username }} 의 프로필 페이지</h3>
     <hr>  
     hello {{ userinfo.category }}
     <div v-if="userinfo.category">
@@ -19,29 +20,38 @@
       <div v-if="pollstore.resultList">
       <div v-if="pollstore.resultList.deposits !== 'null'">
         <p>자세한 것은 정기예금 상품 페이지를 확인해주세요!</p>
-        <ul>
-          <li v-for="depositProduct in pollstore.resultList.deposits" :key="depositProduct.id">
-            <h3>{{ depositProduct.fin_prdt_nm }}</h3>
-            <h4>{{ depositProduct.kor_co_nm }}</h4>
-            <p>금리 (6개월): {{ depositProduct.save_trm_6  + '%'}}</p>
-            <p>금리 (12개월): {{ depositProduct.save_trm_12 + '%' }}</p>
-            <p>금리 (24개월): {{ depositProduct.save_trm_24 + '%' }}</p>
-            <p>금리 (36개월): {{ depositProduct.save_trm_36 + '%' }}</p>
-          </li>
-        </ul>
+       
+        <div v-for="depositProduct in pollstore.resultList.deposits" :key="depositProduct.id">
+          <div class="card">
+            <div class="card-body">
+              <h3>{{ depositProduct.fin_prdt_nm }}</h3>
+              <h4>{{ depositProduct.kor_co_nm }}</h4>
+              <p>금리 (6개월): {{ depositProduct.save_trm_6  + '%'}}</p>
+              <p>금리 (12개월): {{ depositProduct.save_trm_12 + '%' }}</p>
+              <p>금리 (24개월): {{ depositProduct.save_trm_24 + '%' }}</p>
+              <p>금리 (36개월): {{ depositProduct.save_trm_36 + '%' }}</p>
+            </div>
+          </div>
+        </div>
+  
       </div>
       <div v-if="pollstore.resultList.savings !== 'null'">
         <p>자세한 것은 적금 상품 페이지를 확인해주세요!</p>
-        <ul>
-          <li v-for="savingsProduct in pollstore.resultList.savings" :key="savingsProduct.id">
-            <h3>{{ savingsProduct.fin_prdt_nm }}</h3>
-            <h4>{{ savingsProduct.kor_co_nm }}</h4>
-            <p>금리 (6개월): {{ savingsProduct.save_trm_6 + '%' }}</p>
-            <p>금리 (12개월): {{ savingsProduct.save_trm_12 + '%' }}</p>
-            <p>금리 (24개월): {{ savingsProduct.save_trm_24 + '%' }}</p>
-            <p>금리 (36개월): {{ savingsProduct.save_trm_36 + '%' }}</p>
-          </li>
-        </ul>
+
+        
+          <div v-for="savingsProduct in pollstore.resultList.savings" :key="savingsProduct.id">
+            <div class="card">
+              <div class="card-body">
+                <h3>{{ savingsProduct.fin_prdt_nm }}</h3>
+                <h4>{{ savingsProduct.kor_co_nm }}</h4>
+                <p>금리 (6개월): {{ savingsProduct.save_trm_6 + '%' }}</p>
+                <p>금리 (12개월): {{ savingsProduct.save_trm_12 + '%' }}</p>
+                <p>금리 (24개월): {{ savingsProduct.save_trm_24 + '%' }}</p>
+                <p>금리 (36개월): {{ savingsProduct.save_trm_36 + '%' }}</p>
+              </div>
+            </div>
+          </div>
+        
       </div>
 
       
@@ -58,7 +68,7 @@
 
     <p>나의 이름 : {{ userinfo.username }}</p>
 
-  
+  </div>
 </template>
 
 <script setup>
@@ -90,5 +100,7 @@ hr {
   border-radius: 5px;
 }
 
-
+.card {
+  margin-top: 20px;
+}
 </style>
