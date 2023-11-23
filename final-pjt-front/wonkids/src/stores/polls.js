@@ -21,6 +21,8 @@ export const usePollStore = defineStore('poll', () => {
     })
   }
 
+  const resultList = ref([])
+
   const getResult = function () {
     axios({
       method: 'get',
@@ -29,7 +31,10 @@ export const usePollStore = defineStore('poll', () => {
         Authorization: `Token ${token.value}`
       }
     })
+    .then(res => resultList.value = res.data)
+    .catch(err => console.log(err))
   }
-  return { sendResult, getResult }
+  
+  return { sendResult, getResult, resultList }
 })
   

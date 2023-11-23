@@ -11,17 +11,7 @@ from django.http import JsonResponse
 from rest_framework import status 
 
 # Create your views here.
-def index(request):
-    pass
-    
-
-
-def profile(request):
-    pass
-
-
-
- # 정기예금 데이터 가져오는 함수
+# 정기예금 데이터 가져오는 함수
 @api_view(['GET', 'POST'])
 def bank_list_deposit(request):
     API_KEY = settings.API_KEY

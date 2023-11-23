@@ -1,16 +1,44 @@
 <template>
-  <div>
     <h1>{{ userinfo.username }} 님의 프로필 페이지</h1>
     <hr>  
     <div v-if="userinfo.category">
       <p>나의 결과는!! {{ userinfo.category }}</p>
       <p>결과에 따른 추천 상품 목록</p>
+      <p>이건 기본금리이고 기본금리, 우대금리에 대한 설명을 작성한 뒤에</p>
+      <p>금융 정보를 상세하게 볼 수 있는 페이지로 가서 참고할 수 있게 글을 작성</p>
+      <div v-if="pollstore.resultList">
+      <div v-if="pollstore.resultList.deposits !== 'null'">
+        <p>자세한 것은 정기예금 상품 페이지를 확인해주세요!</p>
+        <ul>
+          <li v-for="depositProduct in pollstore.resultList.deposits" :key="depositProduct.id">
+            <h3>{{ depositProduct.fin_prdt_nm }}</h3>
+            <h4>{{ depositProduct.kor_co_nm }}</h4>
+            <p>금리 (6개월): {{ depositProduct.save_trm_6  + '%'}}</p>
+            <p>금리 (12개월): {{ depositProduct.save_trm_12 + '%' }}</p>
+            <p>금리 (24개월): {{ depositProduct.save_trm_24 + '%' }}</p>
+            <p>금리 (36개월): {{ depositProduct.save_trm_36 + '%' }}</p>
+          </li>
+        </ul>
+      </div>
+      <div v-if="pollstore.resultList.savings !== 'null'">
+        <p>자세한 것은 적금 상품 페이지를 확인해주세요!</p>
+        <ul>
+          <li v-for="savingsProduct in pollstore.resultList.savings" :key="savingsProduct.id">
+            <h3>{{ savingsProduct.fin_prdt_nm }}</h3>
+            <h4>{{ savingsProduct.kor_co_nm }}</h4>
+            <p>금리 (6개월): {{ savingsProduct.save_trm_6 + '%' }}</p>
+            <p>금리 (12개월): {{ savingsProduct.save_trm_12 + '%' }}</p>
+            <p>금리 (24개월): {{ savingsProduct.save_trm_24 + '%' }}</p>
+            <p>금리 (36개월): {{ savingsProduct.save_trm_36 + '%' }}</p>
+          </li>
+        </ul>
+      </div>
 
       <p>다시 한번 유형 검사를 하고 싶다면?</p>
       <p>아래의 버튼을 클릭하세요!</p>
       <form @submit.prevent="goPollIndex">
-          <input type="submit" value="유형검사 다시 하기">
-        </form>
+        <input type="submit" value="유형검사 다시 하기">
+      </form>
     </div>
 
     <div v-else>
@@ -44,7 +72,6 @@ const goPollIndex = () => {
 
 const store = useProfileStore()
 const pollstore = usePollStore()
-
 const userinfo = store.userinfo
 
 onMounted(() => {
