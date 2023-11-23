@@ -26,7 +26,7 @@
       <label for="password2">password confirmation: </label>
       <input type="password" v-model.trim="password2" style="margin-top: 20px;"><br>
       
-      <input type="submit" value="포켓몬 트레이너가 되기" style="margin-top: 20px;">
+      <input type="submit" value="포켓몬 트레이너 되기" style="margin-top: 20px;">
     </form>
   </div>
 </template>

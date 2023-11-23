@@ -173,23 +173,3 @@ def bank_detail_savings(request, bank_pk):
 #             # optionList 항목 중 동일 fin_prdt_cd 인 경우
 #             for deposit_option in deposit_data.get('result').get('optionList'):
 #                 if deposit_option.get('fin_prdt_cd') == fin_prdt_cd:
-
-
-# def bank_detail_savings(request):
-#     pass
-
-
-def bank_like_deposit(request):
-    pass
-
-
-def bank_like_savings(request):
-    pass
-
-
-def bank_map(request):
-    pass
-
-
-def exchange_rate(request):
-    pass

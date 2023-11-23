@@ -20,17 +20,8 @@ from rest_framework.permissions import IsAuthenticated
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def polls(request):
-    # print('request', request)
-    # print('user', request.user)
-    # print('request.data', request.data)
-
-    # 다양성을 위해 랜덤으로 4개 추출하여 가져오기
-    # 파이리 - 적금 4개 / 피카츄 - 적금 2개, 예금 2개 / 꼬부기 - 예금 4개
     if request.method == 'GET':
-        print('@@@@@@@@@@@@@@@@@@@@@@@')
         user = get_object_or_404(get_user_model(), username=request.user)
-        print('@@@@@@@in@@@@@@@')
-        print(user.category)
         if user.category == '파이리':
             data = Savings.objects.order_by('?')[:4]
             serializer = SavingsSerializer(data, many=True)
