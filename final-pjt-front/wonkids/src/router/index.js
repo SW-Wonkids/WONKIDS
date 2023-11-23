@@ -27,6 +27,7 @@ import BankListSavingsView from '@/views/BankListSavingsView.vue'
 import BankDepositDetailView from '@/views/BankDepositDetailView.vue'
 import BankSavingsDetailView from '@/views/BankSavingsDetailView.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -134,6 +135,7 @@ const router = createRouter({
       name: 'BankSavingsDetail',
       component: BankSavingsDetailView
     },
+
   ]
 })
 
