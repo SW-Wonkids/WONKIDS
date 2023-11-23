@@ -92,5 +92,9 @@
 .active {
   background-color: #04AA6D; /* Add an active/current color */
 }
+h1 {
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
 
 </style>

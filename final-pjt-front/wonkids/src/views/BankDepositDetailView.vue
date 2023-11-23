@@ -42,7 +42,7 @@ onMounted(() => {
 
 <style scoped>
 .topic {
-  text-decoration: cadetblue wavy underline;
+  text-decoration: rgb(53,106,188)  wavy underline;
 }
 </style>
 
