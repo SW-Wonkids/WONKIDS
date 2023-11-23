@@ -20,7 +20,7 @@ const store = useAuthStore()
         <RouterLink :to="{name: 'exchange-rate'}">Exchange-rate</RouterLink>
       </nav>
       <nav v-else>
-        <RouterLink :to="{name: 'home'}">Home</RouterLink>
+        <RouterLink :to="{name: 'home'}"><img src="@/assets/wonkids.png" class="d-block w-100" style="max-width: 100px; height: auto; text-align: left;"></RouterLink>
         <RouterLink :to="{name: 'signup'}">Sign Up</RouterLink>
         <RouterLink :to="{name: 'login'}">Log In</RouterLink>
         <RouterLink :to="{name: 'banktotal'}">Bank</RouterLink>

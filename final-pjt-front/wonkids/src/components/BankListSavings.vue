@@ -1,7 +1,7 @@
 <template>
   <!--BankListSavings > BankSavings > BankDepositSavingsView 적금 vue page -->
-  <div>
-    <h2>적금 상품 List 출력</h2>
+  <div class="koreanfont">
+    <h2>정기적금 상품 List 출력</h2>
 
     <!--금융회사 검색 기능-->
     <label for="companyFilter">금융회사 명:</label>

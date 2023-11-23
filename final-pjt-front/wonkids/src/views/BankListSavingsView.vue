@@ -1,9 +1,8 @@
 <template>
   <!--BankListSavingsView > BankListSavings > BankSavings 적금 vue page -->
   <div>
-    <RouterLink :to="{name: 'banktotal'}">전체 금융상품 확인하기</RouterLink>    |
+    <RouterLink :to="{name: 'banktotal'}">전체 금융상품 확인하기</RouterLink><br>
     <RouterLink :to="{name: 'banklist_deposit'}">정기예금(DEPOSIT) 금융상품은 여기서 확인해보세요!</RouterLink>  
-    <!-- <h1>적금 금융상품을 여기서 확인해보세요!</h1> -->
     <hr>
     <BankListSavings />
 
@@ -23,5 +22,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+a{
+  text-decoration: none;
+}
 </style>

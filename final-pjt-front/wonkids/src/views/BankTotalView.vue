@@ -1,6 +1,6 @@
 <template>
   <div style="margin-left: 55px;">
-    <p class="koreanfont">정기예금 & 적금 금융상품을 여기서 확인해보세요!</p>
+    <div class="koreanfont">
     <div class="accordion koreanfont" id="accordionExample">
       
       <div class="accordion-item">
@@ -52,7 +52,7 @@
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <strong>적금에 대해 알아볼까요?</strong>
+            <strong>정기 적금에 대해 알아볼까요?</strong>
           </button>
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -69,7 +69,7 @@
             <strong>그럼 어떤 정기 적금 상품이 있는지 확인해볼까요?</strong>
             <span><RouterLink :to="{name: 'banklist_savings'}">적금(SAVINGS)</RouterLink></span>
           </div>
-            
+          </div>  
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
     <hr>
 
     <h2 class="koreanfont">근처 은행 카카오맵으로 보기</h2>
-    <RouterLink :to="{name: 'bankmap'}" class="koreanfont">>>>근처 은행 검색</RouterLink>
+    <RouterLink :to="{name: 'bankmap'}" class="koreanfont" style="font-size: 20px;">>>>근처 은행 검색</RouterLink>
   </div>
 </template>
 

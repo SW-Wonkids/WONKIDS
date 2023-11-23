@@ -1,6 +1,6 @@
 <template>
   <!--BankListDeposit > BankDeposit > BankDepositDetailView 정기예금 vue page -->
-  <div>
+  <div class="koreanfont">
     <h2>정기예금 상품 List 출력</h2>
 
     <label for="companyFilter">금융회사 명:</label>
