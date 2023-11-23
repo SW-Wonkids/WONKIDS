@@ -29,7 +29,7 @@ const store = useAuthStore()
       </nav>
     </div>
   </header>
-
+  
   <RouterView />
 </template>
 
