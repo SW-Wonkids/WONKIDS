@@ -2,24 +2,25 @@
   <div class="background koreanfont" style="margin-left: 50px; margin-right: 50px;">
     <h1>Trainer Community</h1>
 
-    <div></div>
-    <button type="button" class="btn btn-light" style="margin-left: 33px;"><RouterLink :to="{name:'article-create'}">게시글 생성</RouterLink></button>
-    <ul>
-      <div
-          v-for="article in store.articleList"
-          :key="article.pk"
-          :article="article"
-          @click="goDetail(article.pk)"
-          class="card" style="width: 18rem; margin-top: 20px;"
-        >
+    <div>
+      <button type="button" class="btn btn-light" style="margin-left: 33px;"><RouterLink :to="{name:'article-create'}">게시글 생성</RouterLink></button>
+      <ul>
+        <div
+            v-for="article in store.articleList"
+            :key="article.pk"
+            :article="article"
+            @click="goDetail(article.pk)"
+            class="card" style="width: 18rem; margin-top: 20px;"
+          >
 
-        <div class="card-body">
-          <p class="card-title">{{ article.category.name }}</p>
-          <p class="card-text"><span>제목 : {{ article.title }} |</span> 내용 : {{ article.content }}</p>
-          
+          <div class="card-body">
+            <p class="card-title">{{ article.category.name }}</p>
+            <p class="card-text"><span>제목 : {{ article.title }} |</span> 내용 : {{ article.content }}</p>
+            
+          </div>
         </div>
-      </div>
-    </ul>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -46,6 +47,7 @@ const goDetail = (pk) => {
 .background {
   background-image: url('@/assets/case5.png');
   height: 100vh;
+  border-radius: 13px;
 }
 
 h1 {
