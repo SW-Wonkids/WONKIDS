@@ -1,6 +1,8 @@
 <template>
+  <hr>
   <div id="app">
     <h1>Vue Type Quiz</h1>
+    <hr>
     <div v-if="showQuiz">
       <div v-if="currentQuestionIndex < questions.length">
         <div class="question">
@@ -79,4 +81,8 @@ const sendResult = () => {
 </script>
 
 <style scoped>
+hr {
+  border: 10px solid green;
+  border-radius: 5px;
+}
 </style>

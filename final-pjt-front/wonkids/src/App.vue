@@ -12,7 +12,7 @@ const store = useAuthStore()
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
     <div class="wrapper">
       <nav v-if="store.isLogin">
-        <RouterLink :to="{name: 'home'}">Home</RouterLink>
+        <RouterLink :to="{name: 'home'}"><img src="@/assets/wonkids.png" class="d-block w-100" style="max-width: 100px; height: auto; text-align: left;"></RouterLink>
         <RouterLink :to="{name: 'logout'}">Log Out</RouterLink>
         <RouterLink :to="{name: 'profile'}">Profile</RouterLink>
         <RouterLink :to="{name: 'banktotal'}">Bank</RouterLink>
@@ -60,6 +60,7 @@ nav a:hover {
   text-decoration: cadetblue wavy underline;
   
 } 
+
 
 /* header {
   line-height: 1.5;
