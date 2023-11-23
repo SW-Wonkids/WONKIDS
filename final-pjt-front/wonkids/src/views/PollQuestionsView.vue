@@ -1,7 +1,7 @@
 <template>
   <hr style="margin-left: 55px; margin-right: 55px;">
   <div id="app" style="margin-left: 55px; margin-right: 55px;font-family: 'NanumBarunGothicYetHangul';">
-    <h1>Vue Type Quiz</h1>
+    <h1>나의 포켓몬 유형을 찾아봅시다</h1>
     <hr>
     <div v-if="showQuiz">
       <div v-if="currentQuestionIndex < questions.length">

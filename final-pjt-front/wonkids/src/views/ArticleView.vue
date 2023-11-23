@@ -28,6 +28,7 @@
       />
     </ul>
     <hr>
+    <RouterLink :to="{name: 'article-list'}">BACK</RouterLink>
   </div>
 </template>
 
@@ -119,5 +120,9 @@ const deleteArticle = function () {
 
 .comment-content {
   margin-left: 5px;
+}
+
+a{
+  text-decoration: none;
 }
 </style>
