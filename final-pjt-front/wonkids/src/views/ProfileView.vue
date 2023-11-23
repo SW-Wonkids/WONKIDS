@@ -1,10 +1,16 @@
 <template>
-  <div class="koreanfont" style="margin-left: 55px;">
+
+  <div class="container koreanfont" style="margin-left: 55px;">
     <h3 style="text-align: center;">포켓몬 트레이너 {{ userinfo.username }} 의 프로필 페이지</h3>
     <hr>  
+    <p>나의 이름 : {{ userinfo.username }}</p>
     hello {{ userinfo.category }}
     <div v-if="userinfo.category">
       <p>나의 결과는!! {{ userinfo.category }}</p>
+      <p v-if="userinfo.category === '파이리'"><img src="@/assets/pairi.jpg" alt=""></p>
+      <p v-if="userinfo.category === '꼬부기'"><img src="@/assets/kobugi.webp" alt=""></p>
+      <p v-if="userinfo.category === '피카츄'"><img src="@/assets/pikachu.webp" alt=""></p>
+
 
       <hr>
       <p>다시 한번 유형 검사를 하고 싶다면?</p>
@@ -36,7 +42,7 @@
   
       </div>
       <div v-if="pollstore.resultList.savings !== 'null'">
-        <p>자세한 것은 적금 상품 페이지를 확인해주세요!</p>
+        <p>자세한 것은 정기적금 상품 페이지를 확인해주세요!</p>
 
         
           <div v-for="savingsProduct in pollstore.resultList.savings" :key="savingsProduct.id">
@@ -66,7 +72,7 @@
         </form>
     </div>
 
-    <p>나의 이름 : {{ userinfo.username }}</p>
+    
 
   </div>
 </template>

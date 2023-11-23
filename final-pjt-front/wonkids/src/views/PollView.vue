@@ -1,6 +1,6 @@
 <template>
   <div class="koreanfont" style="margin-left: 55px; margin-right: 55px;">
-    <h1>Catch the Pokemon!</h1>
+    <h1><strong>Catch the Pokemon!</strong></h1>
     <p class="koreanfont">유형검사를 시작해봅시다!</p>
     <form @submit.prevent="goPollQuestions">
         <input type="submit" value="유형 검사 시작하기" class="koreanfont">
@@ -22,6 +22,8 @@ const goPollQuestions = () => {
 h1 {
   font-family: 'Pixelify Sans', sans-serif;
   text-align: center;
+  margin-top: 30px;
+  font-size: 50px;
 }
 
 div {
@@ -53,6 +55,7 @@ div input {
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+ 
 }
 div input:hover {background-color: #343634}
 
