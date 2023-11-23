@@ -1,9 +1,18 @@
 <template>
-    <h1>{{ userinfo.username }} 님의 프로필 페이지</h1>
+    <h1>{{ userinfo.username }} 포켓몬 트레이너의 프로필 페이지</h1>
     <hr>  
     hello {{ userinfo.category }}
     <div v-if="userinfo.category">
       <p>나의 결과는!! {{ userinfo.category }}</p>
+
+      <hr>
+      <p>다시 한번 유형 검사를 하고 싶다면?</p>
+      <p>아래의 버튼을 클릭하세요!</p>
+      <form @submit.prevent="goPollIndex">
+        <input type="submit" value="유형검사 다시 하기">
+      </form>
+
+      <hr>
       <p>결과에 따른 추천 상품 목록</p>
       <p>이건 기본금리이고 기본금리, 우대금리에 대한 설명을 작성한 뒤에</p>
       <p>금융 정보를 상세하게 볼 수 있는 페이지로 가서 참고할 수 있게 글을 작성</p>
@@ -35,11 +44,7 @@
         </ul>
       </div>
 
-      <p>다시 한번 유형 검사를 하고 싶다면?</p>
-      <p>아래의 버튼을 클릭하세요!</p>
-      <form @submit.prevent="goPollIndex">
-        <input type="submit" value="유형검사 다시 하기">
-      </form>
+      
     </div>
   </div>
   
@@ -51,13 +56,8 @@
         </form>
     </div>
 
-    <p>나의 아이디 : {{ userinfo.username }}</p>
-    <p>나의 이메일 : {{ userinfo.email }}</p>
-    <p>나의 나이: {{ userinfo.age }}</p>
-    <p>나의 학교: {{ userinfo.school }}</p>
-    <p>나의 학년: {{ userinfo.grade }}</p>
-    <p>나의 반: {{ userinfo.classnum }}</p>
-  
+    <p>나의 이름 : {{ userinfo.username }}</p>
+
   
 </template>
 
@@ -89,4 +89,6 @@ hr {
   border: 10px solid green;
   border-radius: 5px;
 }
+
+
 </style>

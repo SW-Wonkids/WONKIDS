@@ -30,7 +30,9 @@ const store = useAuthStore()
     </div>
   </header>
   
+  
   <RouterView />
+  
 </template>
 
 <style scoped>
@@ -57,9 +59,15 @@ nav a {
 
 nav a:hover {
   /* text-decoration: underline overline cadetblue; */
-  text-decoration: cadetblue wavy underline;
+  text-decoration: rgb(53,106,188) wavy underline;
   
 } 
+
+nav {
+  font-family: 'Pixelify Sans', sans-serif;
+
+}
+
 
 
 /* header {
