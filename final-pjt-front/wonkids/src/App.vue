@@ -9,7 +9,6 @@ const store = useAuthStore()
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
     <div class="wrapper">
       <nav v-if="store.isLogin">
         <RouterLink :to="{name: 'home'}"><img src="@/assets/wonkids.png" class="d-block w-100" style="max-width: 100px; height: auto; text-align: left;"></RouterLink>

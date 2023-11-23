@@ -1,32 +1,32 @@
 <template>
-  <div>
+  <div class="koreanfont">
     <h1>Signup</h1>
     <form @submit.prevent="signUp">
       <label for="username">username: </label>
-      <input type="text" v-model.trim="username"><br>
+      <input type="text" v-model.trim="username" style="margin-top: 20px"><br>
 
       <label for="email">email: </label>
-      <input type="email" v-model.trim="email"><br>
+      <input type="email" v-model.trim="email" style="margin-top: 20px"><br>
 
       <label for="school">school: </label>
-      <input type="text" v-model.trim="school"><br>
+      <input type="text" v-model.trim="school" style="margin-top: 20px"><br>
 
       <label for="grade">grade: </label>
-      <input type="number" v-model.trim="grade"><br>
+      <input type="number" v-model.trim="grade" style="margin-top: 20px"><br>
 
       <label for="classnum">classnum: </label>
-      <input type="number" v-model.trim="classnum"><br>
+      <input type="number" v-model.trim="classnum" style="margin-top: 20px"><br>
 
       <label for="age">age: </label>
-      <input type="number" v-model.trim="age"><br>
+      <input type="number" v-model.trim="age" style="margin-top: 20px"><br>
 
       <label for="password1">password: </label>
-      <input type="password" v-model.trim="password1"><br>
+      <input type="password" v-model.trim="password1" style="margin-top: 20px"><br>
 
       <label for="password2">password confirmation: </label>
-      <input type="password" v-model.trim="password2"><br>
+      <input type="password" v-model.trim="password2" style="margin-top: 20px;"><br>
       
-      <input type="submit">
+      <input type="submit" value="포켓몬 트레이너가 되기" style="margin-top: 20px;">
     </form>
   </div>
 </template>
@@ -63,5 +63,12 @@ const signUp = function () {
 </script>
 
 <style scoped>
-
+div {
+    margin-left: 55px;
+    text-align: center;
+    margin-top: 100px;
+    background-image: url('@/assets/pokeball.webp');
+    background-repeat: no-repeat;
+    height: 100vh;
+}
 </style>

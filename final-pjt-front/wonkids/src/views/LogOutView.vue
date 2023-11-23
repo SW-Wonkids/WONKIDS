@@ -1,10 +1,11 @@
 <template>
     <div class="koreanfont">
-      <h1>LogOut</h1>
-      <p>정말로 로그아웃하시겠습니까?</p>
-        <form @submit.prevent="store.logOut">
-            <input type="submit" value="logOut">
-        </form>
+      <img src="@/assets/bye2.gif" style="border-radius: 3%;">
+        <h1>LogOut</h1>
+        <p>정말로 로그아웃하시겠습니까?</p>
+            <form @submit.prevent="store.logOut">
+                <input type="submit" value="logOut">
+            </form>
     </div>
 </template>
   
@@ -20,6 +21,7 @@ div {
     margin-left: 55px;
     text-align: center;
     margin-top: 100px;
+    background-repeat: no-repeat;
 }
 </style>
   
