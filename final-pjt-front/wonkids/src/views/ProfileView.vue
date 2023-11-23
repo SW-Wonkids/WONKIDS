@@ -82,5 +82,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+hr {
+  border: 10px solid green;
+  border-radius: 5px;
+}
 </style>

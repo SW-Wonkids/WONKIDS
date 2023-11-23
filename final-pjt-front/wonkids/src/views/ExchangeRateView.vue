@@ -1,8 +1,10 @@
 <template>
+  
   <div>
     <div>
       <div>
         <!-- options -->
+        <hr>
         <select name="first-courrency" id="first-currency" v-model="currency_one">
           <option value="KRW">KRW</option>
           <option value="USD">USD</option>
@@ -42,6 +44,7 @@
       <div>
         <h4>반영 날짜:  {{ data.time_last_update_utc }}</h4>
       </div>
+      hr
     </div>
   </div>
 </template>
@@ -82,4 +85,8 @@ const switchValues = () => {
 </script>
 
 <style scoped>
+hr { 
+  border: 10px solid green;
+  border-radius: 5px;
+}
 </style>
