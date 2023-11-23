@@ -78,9 +78,9 @@ const calculateResult = () => {
   const score = answers.value.reduce((total, answer) => total + answer, 0);
 
   if (score === 0 || score === 1) {
-    result.value = "피카츄"
+    result.value = "파이리"
   } else if (score === 2 || score === 3) {
-    result.value = "파이기"
+    result.value = "피카츄"
   } else {
     result.value = "꼬부기"
   }

@@ -6,7 +6,7 @@
       <div
           v-for="article in store.articleList"
           :key="article.pk"
-          :post="article"
+          :article="article"
           @click="goDetail(article.pk)"
         >
         <p>{{ article.category.name }}</p>
