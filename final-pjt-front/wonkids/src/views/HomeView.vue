@@ -1,7 +1,8 @@
 <!-- bootstrap text code -->
 <template>
   <div class="koreanfont" style="margin-left: 55px; margin-right: 55px;">
-    <h1>WONKIDS</h1>
+    <img src="@/assets/wonkids.png" class="d-block w-100" style="max-width: 500px; height: auto; margin: auto; display: block; width: 60%">
+    
     <div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -10,21 +11,21 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="@/assets/carousel1.jpg" class="d-block w-100" alt="...">
+        <img src="@/assets/bank.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
           <p>Some representative placeholder content for the first slide.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="@/assets/carousel2.jpg" class="d-block w-100" alt="...">
+        <img src="@/assets/poll.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Some representative placeholder content for the second slide.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="@/assets/carousel3.jpg" class="d-block w-100" alt="...">
+        <img src="@/assets/exchange.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Some representative placeholder content for the third slide.</p>

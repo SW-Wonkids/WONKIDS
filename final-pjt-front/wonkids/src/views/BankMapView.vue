@@ -56,11 +56,30 @@ const initMap = () => {
 
 const selected = ref('');
 const options = ref([
-{ text: '유성구 은행', value: '대전 유성구 은행' },
-{ text: '대덕구 은행', value: '대전 대덕구 은행' },
-{ text: '서구 은행', value: '대전 서구 은행' },
-{ text: '중구 은행', value: '대전 중구 은행' },
-{ text: '동구 은행', value: '대전 동구 은행' },
+{ text: '서울 마포구 은행', value: '서울 마포구 은행' },
+{ text: '서울 용산구 은행', value: '서울 용산구 은행' },
+{ text: '서울 성동구 은행', value: '서울 성동구 은행' },
+{ text: '서울 광진구 은행', value: '서울 광진구 은행' },
+{ text: '서울 강서구 은행', value: '서울 강서구 은행' },
+{ text: '서울 서대문구 은행', value: '서울 서대문구 은행' },
+{ text: '서울 은평구 은행', value: '서울 은평구 은행' },
+{ text: '대전 유성구 은행', value: '대전 유성구 은행' },
+{ text: '대전 유성구 은행', value: '대전 유성구 은행' },
+{ text: '대전 유성구 은행', value: '대전 유성구 은행' },
+{ text: '대전 유성구 은행', value: '대전 유성구 은행' },
+{ text: '대전 대덕구 은행', value: '대전 대덕구 은행' },
+{ text: '대전 서구 은행', value: '대전 서구 은행' },
+{ text: '대전 중구 은행', value: '대전 중구 은행' },
+{ text: '대전 동구 은행', value: '대전 동구 은행' },
+{ text: '대구 동구 은행', value: '대구 동구 은행' },
+{ text: '대구 수성구 은행', value: '대구 수성구 은행' },
+{ text: '대구 달서구 은행', value: '대구 달서구 은행' },
+{ text: '대구 북구 은행', value: '대구 북구 은행' },
+{ text: '대구 달성군 은행', value: '대구 달성군 은행' },
+{ text: '대구 서구 은행', value: '대구 서구 은행' },
+{ text: '대구 중구 은행', value: '대구 중구 은행' },
+{ text: '대구 남구 은행', value: '대구 남구 은행' },
+
 ]);
 
 const searchBanks = () => {
@@ -100,4 +119,5 @@ const displayMarker = (place) => {
   margin-left: 50px;
   border: 5px dashed pink
 }
+
 </style>

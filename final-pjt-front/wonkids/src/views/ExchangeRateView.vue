@@ -1,5 +1,6 @@
 <template>
   <hr style="margin-left: 55px; margin-right: 55px;">
+  <h2 class="divider line glow" contenteditable></h2>
   <div id="app">
     <h1><img src="@/assets/exchangeRate.png" class="d-block w-100" style="max-width: 500px; height: auto; text-align: left;"></h1>
     <p class="koreanfont">환율계산기</p>
@@ -107,8 +108,42 @@ const switchValues = () => {
 </script>
 
 <style scoped>
+.divider {
+  display: flex;
+}
+  
+.divider::after {
+    content: "";
+    flex: 1;
+  }
+
+.line {
+  align-items: center;
+  margin: 1em -1em;
+}
+
+.line::after {
+    height: 1px;
+    margin: 0 1em;
+  }
+
+.glow {
+
+      height: 6px;
+      -webkit-filter: blur(5px);
+      border-radius: 5px;
+    }
+    
+.glow::before {
+      background: linear-gradient(to right, blue, hotpink);
+    }
+    
+.glow::after {
+      background: linear-gradient(to left, blue, hotpink);
+    }
+
 hr { 
-  border: 10px solid green;
+  border: 20px solid green;
   border-radius: 5px;
 }
 
