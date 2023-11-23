@@ -1,7 +1,7 @@
 <template>
 
-  <div class="container koreanfont" style="margin-left: 55px;">
-    <h3 style="text-align: center;">포켓몬 트레이너 {{ userinfo.username }} 의 프로필 페이지</h3>
+  <div class="container koreanfont" style="font-size: 30px;margin-left: 55px;">
+    <h3 style="text-align: center; font-size: 50px;">포켓몬 트레이너 {{ userinfo.username }} 의 프로필 페이지</h3>
     <hr>  
     <p>나의 이름 : {{ userinfo.username }}</p>
     hello {{ userinfo.category }}
@@ -20,12 +20,22 @@
       </form>
 
       <hr>
-      <p>결과에 따른 추천 상품 목록</p>
-      <p>이건 기본금리이고 기본금리, 우대금리에 대한 설명을 작성한 뒤에</p>
-      <p>금융 정보를 상세하게 볼 수 있는 페이지로 가서 참고할 수 있게 글을 작성</p>
+      <div class="study">
+        <p>
+          <strong>기본 금리란?</strong>다양한 금융 제품에서 해당 금융 기관이 제공하는 금융 상품의 핵심적인 이자율을 나타냅니다.<br>
+          예금 상품의 경우, 고객이 입금한 자금에 대한 기본 이자율입니다.<br>
+          예금 금리는 예금 유형 및 금액, 예치 기간 등에 따라 다를 수 있습니다.<br>
+        </p>
+        <p>
+          <strong>우대 금리란?</strong>금융 제품에서 특정 조건을 만족하는 고객들에게 적용되는 혜택적인 이자율을 나타냅니다.<br>
+          이는 대출, 예금, 신용 카드 및 다른 금융 상품에서 찾을 수 있습니다.<br> 
+          고객이 특정 조건을 충족하면 해당 금융 제품의 우대 금리를 받게 되어 이자 수익을 증대시킬 수 있습니다.
+        </p>
+      </div>
+      <br>
       <div v-if="pollstore.resultList">
       <div v-if="pollstore.resultList.deposits !== 'null'">
-        <p>자세한 것은 정기예금 상품 페이지를 확인해주세요!</p>
+        <p>자세한 것은 <RouterLink :to="{name: 'banklist_deposit'}">정기예금 상품 페이지(Click HERE!)</RouterLink>를 확인해주세요!</p>
        
         <div v-for="depositProduct in pollstore.resultList.deposits" :key="depositProduct.id">
           <div class="card">
@@ -42,11 +52,11 @@
   
       </div>
       <div v-if="pollstore.resultList.savings !== 'null'">
-        <p>자세한 것은 정기적금 상품 페이지를 확인해주세요!</p>
+        <p>자세한 것은 <RouterLink :to="{name: 'banklist_savings'}">정기적금 상품 페이지(Click HERE!)</RouterLink>를 확인해주세요!</p>
 
         
           <div v-for="savingsProduct in pollstore.resultList.savings" :key="savingsProduct.id">
-            <div class="card">
+            <div class="card" >
               <div class="card-body">
                 <h3>{{ savingsProduct.fin_prdt_nm }}</h3>
                 <h4>{{ savingsProduct.kor_co_nm }}</h4>
@@ -108,5 +118,11 @@ hr {
 
 .card {
   margin-top: 20px;
+  background-color: azure;
 }
+
+p img {
+  width: 15%;
+}
+
 </style>

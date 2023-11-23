@@ -1,16 +1,20 @@
 <template>
-  <div>
-      <!-- Dropdown <select> -->
-    <select v-model="selected" @change="searchBanks" style="margin-left: 50px;">
-      <option 
-      v-for="option in options" 
-      :key="option.value" 
-      :value="option.value">
-        {{ option.text }} 
-      </option>
-    </select>
+  <div class="container">
+    <div class="center">
+    <div>
+        <!-- Dropdown <select> -->
+      <select v-model="selected" @change="searchBanks" style="margin-left: 50px;">
+        <option 
+        v-for="option in options" 
+        :key="option.value" 
+        :value="option.value">
+          {{ option.text }} 
+        </option>
+      </select>
+    </div>
+  </div>
 
-    <div><p style="margin-top: 10px; margin-left: 50px; font-family: 'NanumBarunGothicYetHangul';">우리동네 근처 은행을 검색하자:</p> {{ selected }} </div>
+    <div><p style="margin-top: 10px; margin-left: 50px; font-family: 'NanumBarunGothicYetHangul';">우리동네 근처 은행을 검색하자:</p><p style="margin-left: 50px;">{{ selected }}</p> </div>
 
     <!--지도가 표시되는 영역 id=map으로 설정 -->
     <div id="map"></div>
@@ -102,6 +106,9 @@ const displayMarker = (place) => {
   height: 400px;
   margin-left: 50px;
   border: 5px dashed pink
+}
+.center {
+  margin: auto;
 }
 
 </style>
