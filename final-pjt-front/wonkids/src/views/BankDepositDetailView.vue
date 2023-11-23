@@ -1,8 +1,13 @@
 <!--BankListDepositView > BankListDeposit > BankDeposit > BankDepositDetailView -->
 <template>
-  <div>
-    <p class="topic">구체적으로 이 정기예금 금융상품에 대해 알아보자!</p>
+  <div class="koreanfont">
+    
     <div v-if="bank">
+    <p style="font-size: 20px; text-align: center; margin-top: 30px;">구체적으로 <strong>{{ bank.fin_prdt_nm }}</strong> 에 대해 알아보자!</p>
+
+      <div class="container">
+      <div class="card">
+      <div class="card-body">
       <p>공시 제출월[YYYYMM] : {{ bank.dcls_month }}</p>
       <p>금융회사 명 : {{ bank.kor_co_nm }}</p>
       <p>상품명 : {{ bank.fin_prdt_nm }}</p>
@@ -12,6 +17,9 @@
       <RouterLink :to="{name: 'banklist_deposit'}">
       [BACK]
       </RouterLink>
+    </div>
+    </div>
+    </div>
     </div>
 
   </div>
@@ -41,8 +49,21 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.topic {
-  text-decoration: rgb(53,106,188)  wavy underline;
+.card {
+  width: 50%;
+  border: 2px solid rgb(53,106,188);
+  border-radius: 2%;
+  margin-top: 30px;
+  margin-left: 55px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
 }
 </style>
 
