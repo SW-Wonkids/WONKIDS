@@ -1,9 +1,12 @@
 <template>
   <div class="koreanfont" style="margin-left: 55px; margin-right: 55px; font-size: 30px;">
     <h1><strong>Catch the Pokemon!</strong></h1>
-    <p class="koreanfont">유형검사를 시작해봅시다!</p>
+    <p class="koreanfont">포켓몬을 잡으러 모험을 떠나봅시다!</p>
+    <p class="warning">주의! 포켓몬은 한 사람 당 한 포켓몬만 데리고 있을 수 있어요.<br>
+      만약 기존에 포켓몬을 데리고 있었다면 그 포켓몬은 사라지니 조심하세요!
+    </p>
     <form @submit.prevent="goPollQuestions">
-        <input type="submit" value="유형 검사 시작하기" class="koreanfont" style="font-size: 25px;">
+        <input type="submit" value="출발!" class="koreanfont" style="font-size: 25px;">
     </form>
   </div>
 </template>
@@ -63,5 +66,9 @@ div input:active {
   /* background-color: #3e8e41; */
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.warning {
+  font-size: 18px;
 }
 </style>

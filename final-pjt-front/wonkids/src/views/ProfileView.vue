@@ -12,10 +12,10 @@
 
 
       <hr>
-      <p>다시 한번 유형 검사를 하고 싶다면?</p>
+      <p>다시 한번 포켓몬을 잡으러 가고 싶다면?</p>
       <p>아래의 버튼을 클릭하세요!</p>
       <form @submit.prevent="goPollIndex">
-        <input type="submit" value="유형검사 다시 하기">
+        <input type="submit" value="새로운 포켓몬 잡으러 가기">
       </form>
 
       <hr>
@@ -76,7 +76,7 @@
     <div v-else>
       <p>안녕하세요! {{ userinfo.username }} 포켓몬 트레이너는 아직 포켓몬을 잡지 않으셨군요!</p>
       <p>지금 포켓몬 잡기에 참여하여 같은 포켓몬을 잡은 사람끼리 이야기하고</p>
-      <p>추천 상품 목록도 확인해보세요!</p>
+      <p>금융 추천 상품 목록도 확인해보세요!</p>
         <form @submit.prevent="goPollIndex">
           <input type="submit" value="포켓몬 잡으러 가기">
         </form>
