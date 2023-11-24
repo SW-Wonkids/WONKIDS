@@ -1,14 +1,13 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-# from .serializers import PostListSerializer, CategorySerializer, PostSerializer, CommentSerializer
 from .models import Deposit, Savings
+
 # API_KEY 가져오기
 from django.conf import settings
+
 import requests
 from .serializers import DepositSerializer, SavingsSerializer
 from django.shortcuts import get_object_or_404
-from django.http import JsonResponse
-from rest_framework import status 
 
 # Create your views here.
 # 정기예금 데이터 가져오는 함수
@@ -89,13 +88,7 @@ def bank_list_savings(request):
         # 이미 저장된 상품이 아닌 경우에 대해 
         fin_prdt_cd = savings_product.get('fin_prdt_cd')
         if not Savings.objects.filter(fin_prdt_cd=fin_prdt_cd).exists():
-            # savings_option = [opt for opt in savings_data.get('result').get('optionList') if opt.get('fin_prdt_cd') == fin_prdt_cd]
-           
-            # if savings_option:
-            #     rsrv_type = savings_option[0].get('rsrv_type')
 
-            #     if rsrv_type == 'S':
-           
             for savings_option in savings_data.get('result').get('optionList'):
                 if savings_option.get('fin_prdt_cd') == fin_prdt_cd:
                   
@@ -160,16 +153,3 @@ def bank_detail_savings(request, bank_pk):
         serializer = SavingsSerializer(bank_savings)
         print(serializer.data)
         return Response(serializer.data)
-
-#     # 정기예금 데이터 가져오기
-#     API_KEY = settings.API_KEY
-#     deposit_url = f'http://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json?auth={API_KEY}&topFinGrpNo=020000&pageNo=1'
-#     deposit_data = requests.get(deposit_url).json()
-#     for deposit_product in deposit_data.get('result').get('baseList'):
-#         # 이미 저장된 상품이 아닌 경우에 대해 
-#         fin_prdt_cd = deposit_product.get('fin_prdt_cd')
-#         if fin_prdt_cd == bank_pk:
-#         if not Deposit.objects.filter(fin_prdt_cd=fin_prdt_cd).exists():
-#             # optionList 항목 중 동일 fin_prdt_cd 인 경우
-#             for deposit_option in deposit_data.get('result').get('optionList'):
-#                 if deposit_option.get('fin_prdt_cd') == fin_prdt_cd:

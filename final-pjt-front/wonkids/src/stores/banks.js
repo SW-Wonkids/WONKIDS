@@ -13,22 +13,22 @@ export const useBankStore = defineStore('bank', () => {
       url: `${API_URL}/api/v1/bank_deposit/`
     })
       .then(res => {
-        console.log(res)
-        console.log(res.data)
+        // console.log(res)
+        // console.log(res.data)
         banks.value = res.data
       })
       .catch(err => console.log(err))
   }
 
-  // 적금 데이터 가져오는 함수 
+  // 정기적금 데이터 가져오는 함수 
   const getBanksSavings = function () {
     axios({
       method: 'get',
       url: `${API_URL}/api/v1/bank_savings/`
     })
       .then(res => {
-        console.log(res)
-        console.log(res.data)
+        // console.log(res)
+        // console.log(res.data)
         banks.value = res.data
       })
       .catch(err => console.log(err))

@@ -1,24 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+// 게시판(CRUD) 출력 관련 페이지
 import ArticleCreateView from '@/views/ArticleCreateView.vue'
 import ArticleListView from '@/views/ArticleListView.vue'
 import ArticleView from '@/views/ArticleView.vue'
 import ArticleUpdateView from '@/views/ArticleUpdateView.vue'
 
+// 은행 지도 출력 관련 페이지
 import BankMapView from '@/views/BankMapView.vue'
 
+// 환율 계산기 출력 관련 페이지
 import ExchangeRateView from '@/views/ExchangeRateView.vue'
 
+// 회원 관리 기능 관련 페이지
 import HomeView from '@/views/HomeView.vue'
+import SignUpView from '@/views/SignUpView.vue'
 import LogInView from '@/views/LogInView.vue'
 import LogOutView from '@/views/LogOutView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 
+// 유형검사(포켓몬) 관련 페이지
 import PollView from '@/views/PollView.vue'
 import PollQuestionsView from '@/views/PollQuestionsView.vue'
-
-import ProfileView from '@/views/ProfileView.vue'
-import SignUpView from '@/views/SignUpView.vue'
-import NotFoundView from '@/views/NotFoundView.vue'
 
 // 정기예금 , 적금 데이터 출력 관련 페이지 
 import BankTotalView from '@/views/BankTotalView.vue' 
@@ -26,6 +29,9 @@ import BankListDepositView from '@/views/BankListDepositView.vue'
 import BankListSavingsView from '@/views/BankListSavingsView.vue'
 import BankDepositDetailView from '@/views/BankDepositDetailView.vue'
 import BankSavingsDetailView from '@/views/BankSavingsDetailView.vue'
+
+// 접근 불가능한 경로로 왔을 때 출력되는 페이지
+import NotFoundView from '@/views/NotFoundView.vue'
 
 
 const router = createRouter({
