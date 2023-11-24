@@ -5,7 +5,6 @@
     <RouterLink :to="{name: 'banklist_deposit'}">정기예금(DEPOSIT) 금융상품은 여기서 확인해보세요!</RouterLink>  
     <hr>
     <BankListSavings />
-
   </div>
 </template>
  
